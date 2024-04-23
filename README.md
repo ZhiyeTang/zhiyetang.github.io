@@ -8,7 +8,7 @@ A Jekyll Theme, based on the Uno-Theme with a list of projects as Timeline.
 ![jekyll-theme-mobil](https://user-images.githubusercontent.com/32843441/72224877-6a5fbf80-357f-11ea-920b-dfae72bf2fbe.gif)
 
 ## Installation/Setup
-1. Download or clone repo `git clone https://github.com/tzuehlke/jekyll-uno-timeline.git`
+1. Download or clone repo `git clone https://github.com/ZhiyeTang/jekyll-uno-timeline.git`
 2. Enter the folder: `cd jekyll-uno-timeline/`
 3. Build it: `jekyll build`
 4. Start Jekyll server: `jekyll serve`

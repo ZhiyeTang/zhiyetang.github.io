@@ -3,7 +3,7 @@ title: Thomas Zühlke
 description: 'Business Card Page'
 url: 'https://www.zuehlke.cloud'
 baseurl: ''
-profilepic: '/images/tzuehlke.jpg'
+profilepic: '/images/zhiyetang.jpg'
 bkimage: '/images/bk1.jpg'
 google_analytics: UA-XXXXXX-X
 font_awesome: 'XXXXXXXXXX.js'
@@ -11,10 +11,10 @@ font_awesome: 'XXXXXXXXXX.js'
 author:
   name: 'Thomas Zühlke'
   email: thomas@zuehlke.cloud
-  mastodon: tzuehlke@mstdn.social
+  mastodon: ZhiyeTang@mstdn.social
   twitter_username: thomzuehlke
 #  facebook_username: joshgerdes
-  github_username:  tzuehlke
+  github_username:  ZhiyeTang
   linkedin_username:  thomas-zühlke-889182165
   meetup_name: Azure-Meetup-Rostock-MV
 
