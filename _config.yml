@@ -1,7 +1,7 @@
 # Site settings
-title: Thomas Zühlke
+title: Zhiye Tang
 description: 'Business Card Page'
-url: 'https://www.zuehlke.cloud'
+# url: 'https://www.zuehlke.cloud'
 baseurl: ''
 profilepic: '/images/zhiyetang.jpg'
 bkimage: '/images/bk1.jpg'
@@ -9,14 +9,14 @@ google_analytics: UA-XXXXXX-X
 font_awesome: 'XXXXXXXXXX.js'
 
 author:
-  name: 'Thomas Zühlke'
-  email: thomas@zuehlke.cloud
-  mastodon: ZhiyeTang@mstdn.social
-  twitter_username: thomzuehlke
+  name: 'Zhiye Tang'
+  email: zhiyetang2022@foxmail.com
+  # mastodon: ZhiyeTang@mstdn.social
+  # twitter_username: thomzuehlke
 #  facebook_username: joshgerdes
   github_username:  ZhiyeTang
-  linkedin_username:  thomas-zühlke-889182165
-  meetup_name: Azure-Meetup-Rostock-MV
+  # linkedin_username:  thomas-zühlke-889182165
+  # meetup_name: Azure-Meetup-Rostock-MV
 
 # Build settings
 destination: _site
