@@ -1,7 +1,7 @@
 # Site settings
 title: Zhiye Tang
-description: 'Business Card Page'
-# url: 'https://www.zuehlke.cloud'
+description: 'Curriculum Vitae'
+url: 'https://zhiyetang.github.io'
 baseurl: ''
 profilepic: '/images/zhiyetang.jpg'
 bkimage: '/images/bk1.jpg'
@@ -11,12 +11,7 @@ font_awesome: 'XXXXXXXXXX.js'
 author:
   name: 'Zhiye Tang'
   email: zhiyetang2022@foxmail.com
-  # mastodon: ZhiyeTang@mstdn.social
-  # twitter_username: thomzuehlke
-#  facebook_username: joshgerdes
   github_username:  ZhiyeTang
-  # linkedin_username:  thomas-zühlke-889182165
-  # meetup_name: Azure-Meetup-Rostock-MV
 
 # Build settings
 destination: _site
