@@ -9,7 +9,7 @@
     <div class="panel-main__inner panel-inverted">
     <div class="panel-main__content">
         <a href="{{ site.baseurl }}/" title="link to home of {{ site.title }}">
-          <img src="{{ site.baseurl }}{{ site.profilepic }}" class="user-image" alt="My Profile Photo" width="400", height="400">
+          <img src="{{ site.baseurl }}{{ site.profilepic }}" class="user-image" alt="My Profile Photo" width="800", height="800">
           <h1 class="panel-cover__title panel-title">{{ site.title }}</h1>
         </a>
         <hr class="panel-cover__divider">
@@ -17,41 +17,12 @@
         <hr class="panel-cover__divider panel-cover__divider--secondary">
 
         <div class="navigation-wrapper">
-
-          <nav class="cover-navigation navigation--social">
-            <ul class="navigation">
-
-            {% if site.author.github_username %}
-              <!-- GitHub -->
-              <li class="navigation__item">
-                <a href="https://www.github.com/{{ site.author.github_username }}" title="{{ site.author.github_username }} on GitHub" target="_blank">
-                  <!-- <i class="icon icon-social-github"></i> -->
-                  <i class="fa-brands fa-github"></i>
-                  <span class="label">GitHub</span>
-                </a>
-              </li>
-            {% endif %}
-
-            {% if site.author.email %}
-              <!-- Email -->
-              <li class="navigation__item">
-                <a href="mailto:{{ site.author.email }}" title="Email {{ site.author.email }}" target="_blank">
-                  <!-- <i class="icon icon-mail"></i> -->
-                  <i class="fa-solid fa-envelope"></i>
-                  <span class="label">Email</span>
-                </a>
-              </li>
-            {% endif %}
-
-            </ul>
-          </nav>
-          
           <!--<nav class="cover-navigation cover-navigation--primary">-->
           <nav class="cover-navigation navigation--social">
             <ul class="navigation">
-              <li class="navigation__item"><a href="https://blog.zuehlke.cloud" title="link to Blog"><i class="fa-solid fa-link"></i>&nbsp;Blog</a></li>
-              <!--<li class="navigation__item"><a href="{{ site.baseurl }}/#" title="link to Tweets" class="panel-button"><i class="icon icon-social-twitter"></i>&nbsp;Tweets</a></li>-->
-              <li class="navigation__item"><a href="{{ site.baseurl }}/#projects" title="List of Projects" class="panel-button projects-button"><i class="fa-solid fa-file-code"></i>&nbsp;Projects</a></li>
+              <li class="navigation__item"><a href="https://github.com/ZhiyeTang/" title="Link to GitHub"><i class="fa-solid fa-link"></i>&nbsp;GitHub</a></li>
+              <li class="navigation__item"><a href="{{ site.baseurl }}/#publications" title="List of Publications" class="panel-button projects-button"><i class="fa-solid fa-file-code"></i>&nbsp;Publication</a></li>
+              <!-- <li class="navigation__item"><a href="https://github.com/ZhiyeTang/" title="Link to Google Scholar"><i class="fa-solid fa-link"></i>&nbsp;Google</a></li> -->
             </ul>
           </nav>
 
