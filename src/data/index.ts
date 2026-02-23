@@ -85,6 +85,15 @@ export const publications: Publication[] = [
 
 export const experience: Experience[] = [
   {
+    company: { en: 'vivo', zh: 'vivo' },
+    role: { en: 'Computer Vision Algorithm Engineer', zh: '计算机视觉算法工程师' },
+    period: '2025.07 - Present',
+    description: {
+      en: 'Working on Computer Science, Machine Learning and related areas as a permanent full-time algorithm engineer.',
+      zh: '全职算法工程师，从事计算机科学、机器学习等相关领域工作。',
+    },
+  },
+  {
     company: {
       en: 'Research Institute for Future Media Computing (FMC), Shenzhen University',
       zh: '深圳大学未来媒体计算研究所（FMC）',
