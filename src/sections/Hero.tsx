@@ -23,7 +23,7 @@ export default function Hero() {
       >
 
         <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-4xl font-bold text-white shadow-2xl shadow-primary/30">
-          J
+          Z
         </div>
 
 
@@ -33,7 +33,7 @@ export default function Hero() {
 
 
         <p className="text-xl text-gray-400 -mt-2 tracking-widest uppercase font-light">
-          Jeric
+          唐致烨
         </p>
 
 
@@ -49,7 +49,7 @@ export default function Hero() {
 
         <div className="flex flex-wrap gap-4 justify-center mt-2">
           <a
-            href="#projects"
+            href="#publications"
             className="px-8 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-primary/25"
           >
             {t('hero_cta_projects')}
@@ -71,14 +71,6 @@ export default function Hero() {
             className="text-gray-400 hover:text-primary transition-colors text-sm font-medium"
           >
             GitHub
-          </a>
-          <a
-            href={contact.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-primary transition-colors text-sm font-medium"
-          >
-            LinkedIn
           </a>
           <a
             href={`mailto:${contact.email}`}

@@ -14,14 +14,6 @@ export default function Footer() {
             GitHub
           </a>
           <a
-            href={contact.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white transition-colors text-sm"
-          >
-            LinkedIn
-          </a>
-          <a
             href={`mailto:${contact.email}`}
             className="text-gray-400 hover:text-white transition-colors text-sm"
           >
@@ -29,7 +21,7 @@ export default function Footer() {
           </a>
         </div>
         <p className="text-gray-500 text-sm">
-          &copy; 2024 Zhiye TANG. All rights reserved.
+          &copy; {new Date().getFullYear()} Zhiye Tang. All rights reserved.
         </p>
       </div>
     </footer>

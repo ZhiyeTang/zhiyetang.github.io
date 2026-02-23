@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.sisyphus/
+.spec-workflow/
+*.tsbuildinfo
+vite.config.d.ts
+vite.config.js

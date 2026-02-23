@@ -43,10 +43,11 @@ export default function Education() {
 
                 <p className="text-gray-400 text-sm mb-2">{edu.period}</p>
 
-
-                <p className="text-secondary text-sm font-medium">
-                  GPA: {edu.gpa}
-                </p>
+                {edu.gpa && (
+                  <p className="text-secondary text-sm font-medium">
+                    GPA: {edu.gpa}
+                  </p>
+                )}
               </div>
             ))}
           </div>

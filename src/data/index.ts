@@ -9,14 +9,14 @@ import type {
 } from '../types';
 
 export const personalInfo: PersonalInfo = {
-  name: 'Zhiye TANG',
+  name: 'Zhiye Tang',
   title: {
-    en: 'Image Algorithm Engineer',
-    zh: '影像算法工程师',
+    en: 'Postgraduate Researcher',
+    zh: '硕士研究生',
   },
   bio: {
-    en: 'Passionate about computer vision and image processing. Building intelligent systems that see and understand the world.',
-    zh: '专注于计算机视觉与图像处理，致力于构建能够感知和理解世界的智能系统。',
+    en: 'Postgraduate student at the Research Institute for Future Media Computing (FMC), Shenzhen University, under the supervision of Dr. Xu Wang. Working in the field of Deep Reinforcement Learning and Volumetric Video Streaming.',
+    zh: '深圳大学未来媒体计算研究所（FMC）硕士研究生，导师为王旭博士。研究方向为深度强化学习与体积视频流媒体。',
   },
   avatar: '',
 };
@@ -24,124 +24,73 @@ export const personalInfo: PersonalInfo = {
 export const skills: SkillGroup[] = [
   {
     category: {
+      en: 'Research Areas',
+      zh: '研究方向',
+    },
+    items: [
+      { name: 'Deep Reinforcement Learning', proficiency: 90 },
+      { name: 'Volumetric Video Streaming', proficiency: 92 },
+      { name: '3D Gaussian Splatting', proficiency: 85 },
+    ],
+  },
+  {
+    category: {
+      en: 'Multimedia & Streaming',
+      zh: '多媒体与流媒体',
+    },
+    items: [
+      { name: 'Point Cloud Processing', proficiency: 88 },
+      { name: 'Viewport Prediction', proficiency: 85 },
+      { name: 'Bitrate Adaptation', proficiency: 88 },
+    ],
+  },
+  {
+    category: {
+      en: 'Programming & Tools',
+      zh: '编程与工具',
+    },
+    items: [
+      { name: 'Python', proficiency: 92 },
+      { name: 'PyTorch', proficiency: 88 },
+      { name: 'C/C++', proficiency: 80 },
+    ],
+  },
+  {
+    category: {
       en: 'Computer Vision',
       zh: '计算机视觉',
     },
     items: [
-      { name: 'Computer Vision', proficiency: 90 },
-      { name: 'Image Processing', proficiency: 88 },
-      { name: 'Object Detection', proficiency: 85 },
-    ],
-  },
-  {
-    category: {
-      en: 'Deep Learning',
-      zh: '深度学习',
-    },
-    items: [
-      { name: 'Deep Learning', proficiency: 85 },
-      { name: 'PyTorch', proficiency: 88 },
-      { name: 'TensorFlow', proficiency: 80 },
-    ],
-  },
-  {
-    category: {
-      en: 'Programming Languages',
-      zh: '编程语言',
-    },
-    items: [
-      { name: 'Python', proficiency: 95 },
-      { name: 'C++', proficiency: 80 },
-      { name: 'TypeScript', proficiency: 82 },
-    ],
-  },
-  {
-    category: {
-      en: 'Tools & Libraries',
-      zh: '工具与库',
-    },
-    items: [
-      { name: 'OpenCV', proficiency: 92 },
-      { name: 'NumPy', proficiency: 90 },
-      { name: 'CUDA', proficiency: 78 },
+      { name: 'Eye Tracking & Saliency', proficiency: 85 },
+      { name: 'Scene Reconstruction', proficiency: 82 },
+      { name: 'User Behavior Analysis', proficiency: 86 },
     ],
   },
 ];
 
-export const projects: Project[] = [
-  {
-    title: {
-      en: 'Real-time Object Detection System',
-      zh: '实时目标检测系统',
-    },
-    description: {
-      en: 'A high-performance object detection system using YOLOv8 and CUDA optimization for real-time inference on edge devices.',
-      zh: '基于YOLOv8和CUDA优化的高性能目标检测系统，支持边缘设备实时推理。',
-    },
-    tags: ['Python', 'PyTorch', 'CUDA', 'YOLOv8'],
-    githubUrl: 'https://github.com/zhiyetang/object-detection',
-    demoUrl: 'https://demo.example.com/detection',
-  },
-  {
-    title: {
-      en: 'Image Enhancement Pipeline',
-      zh: '图像增强处理管道',
-    },
-    description: {
-      en: 'An end-to-end image enhancement pipeline combining traditional image processing and deep learning techniques for low-light and degraded image restoration.',
-      zh: '结合传统图像处理和深度学习技术的端到端图像增强管道，用于低光和退化图像恢复。',
-    },
-    tags: ['C++', 'OpenCV', 'Deep Learning'],
-    githubUrl: 'https://github.com/zhiyetang/image-enhancement',
-    demoUrl: 'https://demo.example.com/enhancement',
-  },
-  {
-    title: {
-      en: 'Semantic Segmentation Framework',
-      zh: '语义分割框架',
-    },
-    description: {
-      en: 'A flexible semantic segmentation framework supporting multiple architectures (U-Net, DeepLab, SegFormer) with easy model switching and deployment.',
-      zh: '支持多种架构（U-Net、DeepLab、SegFormer）的灵活语义分割框架，易于模型切换和部署。',
-    },
-    tags: ['Python', 'PyTorch', 'Segmentation'],
-    githubUrl: 'https://github.com/zhiyetang/segmentation-framework',
-    demoUrl: 'https://demo.example.com/segmentation',
-  },
-];
+export const projects: Project[] = [];
 
 export const publications: Publication[] = [
   {
-    title: 'Efficient Real-time Object Detection on Edge Devices',
-    authors: ['Zhiye TANG', 'John Smith', 'Jane Doe'],
-    venue: 'IEEE Conference on Computer Vision and Pattern Recognition',
-    year: 2023,
-    doi: '10.1109/CVPR.2023.12345',
-    abstract: {
-      en: 'This paper presents an efficient object detection method optimized for edge devices with limited computational resources. We propose a novel pruning strategy combined with quantization to achieve real-time inference.',
-      zh: '本文提出了一种针对计算资源有限的边缘设备优化的高效目标检测方法。我们提出了一种新颖的剪枝策略与量化相结合的方法以实现实时推理。',
-    },
-  },
-  {
-    title: 'Deep Learning for Low-Light Image Enhancement',
-    authors: ['Zhiye TANG', 'Alice Johnson'],
-    venue: 'International Journal of Computer Vision',
-    year: 2023,
-    doi: '10.1007/s11263-023-01234-5',
-    abstract: {
-      en: 'We propose a deep learning approach for enhancing low-light images while preserving fine details and reducing noise. Our method outperforms traditional methods on multiple benchmarks.',
-      zh: '我们提出了一种深度学习方法用于增强低光图像，同时保留细节并降低噪声。我们的方法在多个基准上优于传统方法。',
-    },
-  },
-  {
-    title: 'Semantic Segmentation with Transformer Architecture',
-    authors: ['Zhiye TANG', 'Bob Wilson', 'Carol White', 'David Brown'],
-    venue: 'IEEE Transactions on Pattern Analysis and Machine Intelligence',
+    title: 'Eye Fixation and Saliency Field based Greedy Method for Volumetric Video Streaming',
+    authors: ['Zhiye Tang', 'Kai Wang', 'Qiudan Zhang', 'Haowen Mo', 'Yelang Gao', 'Lei Zhang', 'Xu Wang'],
+    venue: 'Under Review',
     year: 2024,
-    doi: '10.1109/TPAMI.2024.56789',
+    doi: '',
     abstract: {
-      en: 'This work explores the application of transformer architectures to semantic segmentation tasks. We demonstrate that transformers can achieve state-of-the-art results with improved efficiency.',
-      zh: '本工作探索了变换器架构在语义分割任务中的应用。我们证明了变换器可以以改进的效率实现最先进的结果。',
+      en: 'In this paper, we propose a greedy method named GES tailored for volumetric video streaming, which exploits human eye fixation data and saliency field to allocate bitrates for different tiles decomposed from point cloud scenes under a given bandwidth constraint. Moreover, to evaluate the performance of GES, we construct a platform to collect user head posture and eye fixation data, accumulating 40 user viewing behavior trajectories in total.',
+      zh: '本文提出了一种名为GES的贪心方法，专为体积视频流媒体设计，利用人眼注视数据和显著性场在给定带宽约束下为点云场景分解的不同瓦片分配比特率。此外，为了评估GES的性能，我们构建了一个平台来收集用户头部姿态和眼动注视数据，共积累了40条用户观看行为轨迹。',
+    },
+  },
+  {
+    title: 'GSStream: 3D Gaussian Splatting based Volumetric Scene Streaming System',
+    authors: ['Zhiye Tang', 'Qiudan Zhang', 'Kai Wang', 'Lei Zhang', 'Xu Wang', 'Jianmin Jiang'],
+    venue: 'Under Review',
+    year: 2024,
+    doi: '',
+    abstract: {
+      en: 'In this paper, we propose GSStream, a novel volumetric scene streaming system to support 3DGS data format. Specifically, GSStream integrates a collaborative viewport prediction module to better predict users\' future behaviors by learning collaborative priors and historical priors from multiple users and users\' viewport sequences, and a DRL-based bitrate adaptation module to tackle the state and action space variability challenge of the bitrate adaptation problem, achieving efficient 3DGS content delivery. Besides, we first build a user viewport trajectory dataset for 3DGS scenes to support the training and streaming simulation.',
+      zh: '本文提出了GSStream，一种新型体积场景流媒体系统，支持3DGS数据格式。具体而言，GSStream集成了协作视口预测模块，通过学习多用户的协作先验和用户视口序列的历史先验来更好地预测用户未来行为，以及基于DRL的比特率自适应模块来解决比特率自适应问题中状态和动作空间可变性的挑战，实现高效的3DGS内容传输。此外，我们首次构建了3DGS场景的用户视口轨迹数据集，以支持训练和流媒体仿真。',
     },
   },
 ];
@@ -149,32 +98,32 @@ export const publications: Publication[] = [
 export const experience: Experience[] = [
   {
     company: {
-      en: 'Tech Vision Inc.',
-      zh: '科技视觉公司',
+      en: 'Research Institute for Future Media Computing (FMC), Shenzhen University',
+      zh: '深圳大学未来媒体计算研究所（FMC）',
     },
     role: {
-      en: 'Senior Image Algorithm Engineer',
-      zh: '高级影像算法工程师',
+      en: 'Postgraduate Researcher',
+      zh: '硕士研究生',
     },
-    period: '2022 - Present',
+    period: '2022.09 - Present',
     description: {
-      en: 'Led the development of real-time object detection systems and image enhancement pipelines. Optimized algorithms for edge device deployment achieving 10x performance improvement.',
-      zh: '领导实时目标检测系统和图像增强管道的开发。优化了边缘设备部署的算法，性能提升10倍。',
+      en: 'Conducting research on Deep Reinforcement Learning and Volumetric Video Streaming under the supervision of Dr. Xu Wang. Published papers on eye fixation-based streaming optimization and 3D Gaussian Splatting streaming systems.',
+      zh: '在王旭博士指导下从事深度强化学习与体积视频流媒体研究。发表了关于基于眼动注视的流媒体优化和3D高斯泼溅流媒体系统的论文。',
     },
   },
   {
     company: {
-      en: 'AI Research Lab',
-      zh: '人工智能研究实验室',
+      en: 'ACM Multimedia (ACMMM) 2024',
+      zh: 'ACM多媒体（ACMMM）2024',
     },
     role: {
-      en: 'Computer Vision Engineer',
-      zh: '计算机视觉工程师',
+      en: 'Conference Reviewer',
+      zh: '会议审稿人',
     },
-    period: '2020 - 2022',
+    period: '2024.04',
     description: {
-      en: 'Developed semantic segmentation models and conducted research on deep learning optimization. Published 3 papers in top-tier conferences.',
-      zh: '开发了语义分割模型并进行了深度学习优化研究。在顶级会议上发表了3篇论文。',
+      en: 'Served as a reviewer for ACM Multimedia 2024 conference.',
+      zh: '担任ACM Multimedia 2024会议审稿人。',
     },
   },
 ];
@@ -182,32 +131,32 @@ export const experience: Experience[] = [
 export const education: Education[] = [
   {
     school: {
-      en: 'University of Technology',
-      zh: '科技大学',
+      en: 'Shenzhen University',
+      zh: '深圳大学',
     },
     degree: {
-      en: 'Master of Science in Computer Science',
-      zh: '计算机科学硕士',
+      en: 'Master of Science (Postgraduate)',
+      zh: '硕士研究生',
     },
-    period: '2018 - 2020',
-    gpa: '3.8/4.0',
+    period: '2022.09 - Present',
+    gpa: '',
   },
   {
     school: {
-      en: 'National University',
-      zh: '国立大学',
+      en: 'Shenzhen University',
+      zh: '深圳大学',
     },
     degree: {
-      en: 'Bachelor of Science in Computer Science',
-      zh: '计算机科学学士',
+      en: 'Bachelor of Science',
+      zh: '理学学士',
     },
-    period: '2014 - 2018',
-    gpa: '3.7/4.0',
+    period: '2018.09 - 2022.07',
+    gpa: '',
   },
 ];
 
 export const contact: ContactInfo = {
-  email: 'jeric@example.com',
-  github: 'https://github.com/zhiyetang',
-  linkedin: 'https://linkedin.com/in/zhiyetang',
+  email: 'zhiyetang2022@foxmail.com',
+  github: 'https://github.com/ZhiyeTang',
+  linkedin: '',
 };

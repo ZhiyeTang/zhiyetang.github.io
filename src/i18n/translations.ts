@@ -10,9 +10,9 @@ export const translations = {
     nav_contact: 'Contact',
     // Hero
     hero_greeting: 'Hi, I\'m',
-    hero_title: 'Image Algorithm Engineer',
-    hero_bio: 'Passionate about computer vision and image processing. Building intelligent systems that see and understand the world.',
-    hero_cta_projects: 'View Projects',
+    hero_title: 'Postgraduate Researcher',
+    hero_bio: 'Working in the field of Deep Reinforcement Learning and Volumetric Video Streaming at Shenzhen University.',
+    hero_cta_projects: 'View Publications',
     hero_cta_contact: 'Contact Me',
     hero_scroll: 'Scroll Down',
     // Sections
@@ -55,16 +55,16 @@ export const translations = {
     nav_contact: '联系',
     // Hero
     hero_greeting: '你好，我是',
-    hero_title: '影像算法工程师',
-    hero_bio: '专注于计算机视觉与图像处理，致力于构建能够感知和理解世界的智能系统。',
-    hero_cta_projects: '查看项目',
+    hero_title: '硕士研究生',
+    hero_bio: '深圳大学未来媒体计算研究所，研究方向为深度强化学习与体积视频流媒体。',
+    hero_cta_projects: '查看发表',
     hero_cta_contact: '联系我',
     hero_scroll: '向下滚动',
     // Sections
     section_skills: '技能',
     section_projects: '项目',
     section_publications: '学术发表',
-    section_experience: '工作经历',
+    section_experience: '经历',
     section_education: '教育背景',
     section_contact: '联系方式',
     // Skills
@@ -79,7 +79,7 @@ export const translations = {
     publications_show_abstract: '展开摘要',
     publications_hide_abstract: '收起摘要',
     // Experience
-    experience_subtitle: '我的职业历程',
+    experience_subtitle: '我的经历',
     // Education
     education_subtitle: '学术背景',
     education_gpa: '绩点',

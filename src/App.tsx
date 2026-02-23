@@ -1,7 +1,6 @@
 import { Navbar, Footer } from './components/layout'
 import Hero from './sections/Hero'
 import { Skills } from './sections/Skills'
-import { Projects } from './sections/Projects'
 import { Publications } from './sections/Publications'
 import Experience from './sections/Experience'
 import Education from './sections/Education'
@@ -14,7 +13,6 @@ function App() {
       <main>
         <Hero />
         <Skills />
-        <Projects />
         <Publications />
         <Experience />
         <Education />

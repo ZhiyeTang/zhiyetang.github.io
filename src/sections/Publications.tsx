@@ -14,7 +14,7 @@ function PublicationCard({ pub }: { pub: (typeof publications)[0] }) {
       <p className="text-sm text-gray-300 mb-2">
         {pub.authors.map((author, i) => (
           <span key={author}>
-            {author === 'Zhiye TANG' ? (
+            {author === 'Zhiye Tang' ? (
               <strong className="text-primary">{author}</strong>
             ) : (
               <span>{author}</span>
@@ -27,14 +27,16 @@ function PublicationCard({ pub }: { pub: (typeof publications)[0] }) {
       <div className="flex flex-wrap items-center gap-3 mb-3">
         <span className="text-secondary text-sm italic">{pub.venue}</span>
         <span className="text-gray-400 text-sm">{pub.year}</span>
-        <a
-          href={`https://doi.org/${pub.doi}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-xs text-gray-500 hover:text-primary transition-colors duration-200 underline underline-offset-2"
-        >
-          DOI: {pub.doi}
-        </a>
+        {pub.doi && (
+          <a
+            href={`https://doi.org/${pub.doi}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-gray-500 hover:text-primary transition-colors duration-200 underline underline-offset-2"
+          >
+            DOI: {pub.doi}
+          </a>
+        )}
       </div>
 
       <button
@@ -66,8 +68,8 @@ export function Publications() {
         </div>
 
         <div className="flex flex-col gap-6">
-          {publications.map((pub) => (
-            <PublicationCard key={pub.doi} pub={pub} />
+          {publications.map((pub, index) => (
+            <PublicationCard key={pub.doi || index} pub={pub} />
           ))}
         </div>
       </div>
