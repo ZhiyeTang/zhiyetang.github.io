@@ -62,8 +62,8 @@ export const publications: Publication[] = [
   {
     title: 'Eye Fixation and Saliency Field based Greedy Method for Volumetric Video Streaming',
     authors: ['Zhiye Tang', 'Kai Wang', 'Qiudan Zhang', 'Haowen Mo', 'Yelang Gao', 'Lei Zhang', 'Xu Wang'],
-    venue: 'Under Review',
-    year: 2024,
+    venue: 'IEEE MLMC 2025',
+    year: 2025,
     doi: '',
     abstract: {
       en: 'In this paper, we propose a greedy method named GES tailored for volumetric video streaming, which exploits human eye fixation data and saliency field to allocate bitrates for different tiles decomposed from point cloud scenes under a given bandwidth constraint. Moreover, to evaluate the performance of GES, we construct a platform to collect user head posture and eye fixation data, accumulating 40 user viewing behavior trajectories in total.',
