@@ -19,6 +19,14 @@ const cards = [
     gradient: 'from-secondary/20 to-secondary/5',
     border: 'hover:border-secondary/50',
   },
+  {
+    emoji: '💼',
+    labelKey: 'contact_linkedin' as const,
+    display: '@zhiye-tang',
+    href: contact.linkedin,
+    gradient: 'from-primary/20 to-secondary/10',
+    border: 'hover:border-primary/50',
+  },
 ]
 
 export function Contact() {
@@ -36,7 +44,7 @@ export function Contact() {
           <p className="text-gray-400 text-lg">{t('contact_subtitle')}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
           {cards.map((card) => (
             <a
               key={card.labelKey}

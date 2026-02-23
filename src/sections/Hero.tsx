@@ -16,36 +16,24 @@ export default function Hero() {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
 
-
       <div
         ref={ref}
         className={`relative z-10 flex flex-col items-center text-center px-6 gap-6 ${className}`}
       >
 
-        <img src="/hero.png" alt={personalInfo.name} className="w-32 h-32 rounded-full object-cover shadow-2xl shadow-primary/30 ring-2 ring-primary/30" />
-
-
-
+        <img src="/hero.png" alt={personalInfo.name} className="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover shadow-2xl shadow-primary/30 ring-4 ring-primary/30" />
 
         <h1 className="text-5xl md:text-7xl font-black tracking-tight bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
-          {personalInfo.name}
+          {language === 'en' ? personalInfo.name : '唐致烨'}
         </h1>
-
-
-        <p className="text-xl text-gray-400 -mt-2 tracking-widest uppercase font-light">
-          唐致烨
-        </p>
-
 
         <p className="text-xl text-gray-300 font-medium">
           {t('hero_title')}
         </p>
 
-
         <p className="text-gray-400 max-w-2xl text-center leading-relaxed">
           {personalInfo.bio[language]}
         </p>
-
 
         <div className="flex flex-wrap gap-4 justify-center mt-2">
           <a
@@ -61,7 +49,6 @@ export default function Hero() {
             {t('hero_cta_contact')}
           </a>
         </div>
-
 
         <div className="flex gap-6 mt-2">
           <a
@@ -81,9 +68,8 @@ export default function Hero() {
         </div>
       </div>
 
-
       <a
-        href="#skills"
+        href="#publications"
         aria-label={t('hero_scroll')}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gray-400 hover:text-primary transition-colors animate-bounce"
       >

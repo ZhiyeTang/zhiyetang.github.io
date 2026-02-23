@@ -158,5 +158,5 @@ export const education: Education[] = [
 export const contact: ContactInfo = {
   email: 'zhiyetang2022@foxmail.com',
   github: 'https://github.com/ZhiyeTang',
-  linkedin: '',
+  linkedin: 'https://www.linkedin.com/in/zhiye-tang-05316a376/',
 };

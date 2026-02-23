@@ -4,7 +4,7 @@ import LanguageToggle from '../ui/LanguageToggle'
 
 const navLinks = [
   { key: 'nav_about' as const, href: '#hero' },
-  { key: 'nav_skills' as const, href: '#skills' },
+
   { key: 'nav_publications' as const, href: '#publications' },
   { key: 'nav_experience' as const, href: '#experience' },
   { key: 'nav_education' as const, href: '#education' },
