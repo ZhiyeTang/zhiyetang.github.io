@@ -23,10 +23,7 @@ export const personalInfo: PersonalInfo = {
 
 export const skills: SkillGroup[] = [
   {
-    category: {
-      en: 'Research Areas',
-      zh: '研究方向',
-    },
+    category: { en: 'Research Areas', zh: '研究方向' },
     items: [
       { name: 'Deep Reinforcement Learning', proficiency: 90 },
       { name: 'Volumetric Video Streaming', proficiency: 92 },
@@ -34,10 +31,7 @@ export const skills: SkillGroup[] = [
     ],
   },
   {
-    category: {
-      en: 'Multimedia & Streaming',
-      zh: '多媒体与流媒体',
-    },
+    category: { en: 'Multimedia & Streaming', zh: '多媒体与流媒体' },
     items: [
       { name: 'Point Cloud Processing', proficiency: 88 },
       { name: 'Viewport Prediction', proficiency: 85 },
@@ -45,10 +39,7 @@ export const skills: SkillGroup[] = [
     ],
   },
   {
-    category: {
-      en: 'Programming & Tools',
-      zh: '编程与工具',
-    },
+    category: { en: 'Programming & Tools', zh: '编程与工具' },
     items: [
       { name: 'Python', proficiency: 92 },
       { name: 'PyTorch', proficiency: 88 },
@@ -56,10 +47,7 @@ export const skills: SkillGroup[] = [
     ],
   },
   {
-    category: {
-      en: 'Computer Vision',
-      zh: '计算机视觉',
-    },
+    category: { en: 'Computer Vision', zh: '计算机视觉' },
     items: [
       { name: 'Eye Tracking & Saliency', proficiency: 85 },
       { name: 'Scene Reconstruction', proficiency: 82 },
@@ -101,11 +89,8 @@ export const experience: Experience[] = [
       en: 'Research Institute for Future Media Computing (FMC), Shenzhen University',
       zh: '深圳大学未来媒体计算研究所（FMC）',
     },
-    role: {
-      en: 'Postgraduate Researcher',
-      zh: '硕士研究生',
-    },
-    period: '2022.09 - Present',
+    role: { en: 'Postgraduate Researcher', zh: '硕士研究生' },
+    period: '2022.09 - 2025.07',
     description: {
       en: 'Conducting research on Deep Reinforcement Learning and Volumetric Video Streaming under the supervision of Dr. Xu Wang. Published papers on eye fixation-based streaming optimization and 3D Gaussian Splatting streaming systems.',
       zh: '在王旭博士指导下从事深度强化学习与体积视频流媒体研究。发表了关于基于眼动注视的流媒体优化和3D高斯泼溅流媒体系统的论文。',
@@ -116,10 +101,7 @@ export const experience: Experience[] = [
       en: 'ACM Multimedia (ACMMM) 2024',
       zh: 'ACM多媒体（ACMMM）2024',
     },
-    role: {
-      en: 'Conference Reviewer',
-      zh: '会议审稿人',
-    },
+    role: { en: 'Conference Reviewer', zh: '会议审稿人' },
     period: '2024.04',
     description: {
       en: 'Served as a reviewer for ACM Multimedia 2024 conference.',
@@ -130,26 +112,20 @@ export const experience: Experience[] = [
 
 export const education: Education[] = [
   {
-    school: {
-      en: 'Shenzhen University',
-      zh: '深圳大学',
-    },
-    degree: {
-      en: 'Master of Science (Postgraduate)',
-      zh: '硕士研究生',
-    },
-    period: '2022.09 - Present',
+    school: { en: 'Shenzhen University', zh: '深圳大学' },
+    degree: { en: 'Master of Engineering - MEng, Computer Software Engineering', zh: '工学硕士，计算机软件工程' },
+    period: '2022.09 - 2025.07',
     gpa: '',
   },
   {
-    school: {
-      en: 'Shenzhen University',
-      zh: '深圳大学',
-    },
-    degree: {
-      en: 'Bachelor of Science',
-      zh: '理学学士',
-    },
+    school: { en: 'City University of Hong Kong', zh: '香港城市大学' },
+    degree: { en: 'Visiting Research Student, Computer Science', zh: '访问研究生，计算机科学' },
+    period: '2024.12 - 2025.02',
+    gpa: '',
+  },
+  {
+    school: { en: 'Shenzhen University', zh: '深圳大学' },
+    degree: { en: 'Bachelor of Engineering - BE, Mechatronics, Robotics, and Automation Engineering', zh: '工学学士，机电、机器人与自动化工程' },
     period: '2018.09 - 2022.07',
     gpa: '',
   },
