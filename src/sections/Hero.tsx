@@ -22,9 +22,9 @@ export default function Hero() {
         className={`relative z-10 flex flex-col items-center text-center px-6 gap-6 ${className}`}
       >
 
-        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-4xl font-bold text-white shadow-2xl shadow-primary/30">
-          Z
-        </div>
+        <img src="/hero.png" alt={personalInfo.name} className="w-32 h-32 rounded-full object-cover shadow-2xl shadow-primary/30 ring-2 ring-primary/30" />
+
+
 
 
         <h1 className="text-5xl md:text-7xl font-black tracking-tight bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
