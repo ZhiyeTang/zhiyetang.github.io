@@ -17,7 +17,7 @@ export const personalInfo: PersonalInfo = {
   },
   bio: {
     en: 'Image algorithm engineer at vivo, focusing on multimodal large model-based data annotation, on-device visual perception, and model deployment. Previously a postgraduate research student at Shenzhen University (FMC Lab), working on Progressive Coding and Efficient Transmission for 3D Gaussian Splatting.',
-    zh: 'vivo影像规划预研部算法工程师，主要从事基于多模态大模型的数据自动标注、端侧视觉感知模型等技术的预研、开发与部署。此前于深圳大学未来媒体计算研究所（FMC）从事三维高斯泼溅数据渐进式编码与高效传输相关研究。',
+    zh: 'vivo影像规划预研部算法工程师，主要从事基于多模态大模型的数据自动标注、端侧视觉感知模型等技术的预研、开发与部署。此前于深圳大学未来媒体计算研究所（FMC）攻读硕士研究生，研究方向为三维高斯泼溅数据的渐进式编码与高效传输。',
   },
   avatar: '',
 };
