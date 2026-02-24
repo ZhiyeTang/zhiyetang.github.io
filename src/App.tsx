@@ -9,7 +9,7 @@ import { Contact } from './sections/Contact'
 
 function App() {
   return (
-    <div className="bg-[#0a0a0f] min-h-screen">
+    <div className="bg-[#F0EDE6] min-h-screen">
       <Navbar />
       <main>
         <Hero />
