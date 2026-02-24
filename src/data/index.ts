@@ -157,20 +157,11 @@ export const experience: Experience[] = [
   },
   {
     company: {
-      en: 'Research Institute for Future Media Computing (FMC), Shenzhen University',
-      zh: '深圳大学未来媒体计算研究所（FMC）',
+      en: 'Shenzhen University, Research Institute for Future Media Computing (FMC)',
+      zh: '深圳大学 未来媒体计算研究所（FMC）',
     },
-    role: { en: 'Postgraduate Research Student', zh: '硕士研究生' },
+    role: { en: 'Postgraduate Research Student, Progressive Coding and Efficient Streaming of 3D Gaussian Splatting', zh: '硕士研究生，三维高斯泼溅数据渐进式编码与高效传输' },
     period: '2022.09 - 2025.07',
-    description: {
-      en: '',
-      zh: '',
-    },
-  },
-  {
-    company: { en: 'Tencent Game AI Invitational 2022', zh: '2022年腾讯开悟Game AI人工智能邀请赛' },
-    role: { en: 'Team Leader', zh: '队长' },
-    period: '2022',
     description: {
       en: '',
       zh: '',
