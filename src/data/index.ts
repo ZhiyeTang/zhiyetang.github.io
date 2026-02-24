@@ -182,7 +182,7 @@ export const experience: Experience[] = [
       en: 'Shenzhen University',
       zh: '深圳大学',
     },
-    role: { en: 'Postgraduate Research Student, Research Institute for Future Media Computing (FMC)', zh: '硕士研究生，未来媒体计算研究所（FMC）' },
+    role: { en: 'Postgraduate Research Student, Research Institute for Future Media Computing (FMC)', zh: '硕士研究生 未来媒体计算研究所（FMC）' },
     period: '2022.09 - 2025.07',
     description: {
       en: '',
