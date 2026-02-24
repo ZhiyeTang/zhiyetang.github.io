@@ -33,8 +33,8 @@
   --color-border-hover: rgba(184, 134, 74, 0.40);
 
   /* Typography */
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body:    'Source Serif 4', Georgia, serif;
+  --font-display: 'Playfair Display', 'Noto Serif SC', Georgia, serif;
+  --font-body:    'Source Serif 4', 'Noto Serif SC', Georgia, serif;
 
   /* Spacing rhythm */
   --section-padding: clamp(4rem, 10vw, 8rem);

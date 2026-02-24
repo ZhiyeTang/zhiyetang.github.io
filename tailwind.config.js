@@ -52,8 +52,8 @@ export default {
         },
       },
       fontFamily: {
-        display: ['Playfair Display', 'Georgia', 'serif'],
-        sans: ['Source Serif 4', 'Georgia', 'serif'],
+        display: ['Playfair Display', 'Noto Serif SC', 'Georgia', 'serif'],
+        sans: ['Source Serif 4', 'Noto Serif SC', 'Georgia', 'serif'],
       },
       letterSpacing: {
         'widest-xl': '0.25em',
