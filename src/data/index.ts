@@ -170,7 +170,7 @@ export const patents: Patent[] = [
 export const experience: Experience[] = [
   {
     company: { en: 'vivo Mobile Communication Co., Ltd.', zh: 'vivo移动通信有限公司' },
-    role: { en: 'Image Algorithm Engineer, Image Planning & Pre-research Dept.', zh: '影像规划预研部 影像算法工程师' },
+    role: { en: 'Image Algorithm Engineer, Image Planning and Pre-research Dept.', zh: '影像规划预研部 影像算法工程师' },
     period: '2025.05 - Present',
     description: {
       en: '',
@@ -182,7 +182,7 @@ export const experience: Experience[] = [
       en: 'Shenzhen University',
       zh: '深圳大学',
     },
-    role: { en: 'Postgraduate Research Student, Research Institute for Future Media Computing (FMC)', zh: '硕士研究生 未来媒体计算研究所（FMC）' },
+    role: { en: 'Postgraduate Research Student, Research Institute for Future Media Computing (FMC)', zh: '未来媒体计算研究所（FMC） 硕士研究生' },
     period: '2022.09 - 2025.07',
     description: {
       en: '',
@@ -194,19 +194,19 @@ export const experience: Experience[] = [
 export const education: Education[] = [
   {
     school: { en: 'Shenzhen University', zh: '深圳大学' },
-    degree: { en: 'Master of Engineering, Software Engineering', zh: '工学硕士，软件工程' },
+    degree: { en: 'Master of Engineering, Software Engineering', zh: '电子信息硕士 软件工程' },
     period: '2022.09 - 2025.07',
     gpa: '',
   },
   {
     school: { en: 'City University of Hong Kong', zh: '香港城市大学' },
-    degree: { en: 'Visiting Research Student, Computer Science', zh: '访问研究生，计算机科学' },
+    degree: { en: 'Visiting Research Student, Computer Science', zh: '访问研究生 计算机科学' },
     period: '2024.12 - 2025.02',
     gpa: '',
   },
   {
     school: { en: 'Shenzhen University', zh: '深圳大学' },
-    degree: { en: 'Bachelor of Engineering, Automation', zh: '工学学士，自动化' },
+    degree: { en: 'Bachelor of Engineering, Automation', zh: '工学学士 自动化' },
     period: '2018.09 - 2022.07',
     gpa: '',
   },
