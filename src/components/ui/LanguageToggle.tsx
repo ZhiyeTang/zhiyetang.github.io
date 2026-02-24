@@ -4,24 +4,24 @@ export default function LanguageToggle() {
   const { language, setLanguage } = useLanguage()
 
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex items-center gap-2 text-sm">
       <button
         onClick={() => setLanguage('en')}
-        className={`transition-all duration-300 ${
+        className={`transition-colors duration-200 ${
           language === 'en'
-            ? 'bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-bold'
-            : 'text-gray-400 hover:text-white'
+            ? 'text-amber-600 font-medium'
+            : 'text-warm-gray-400 hover:text-warm-gray-700'
         }`}
       >
         EN
       </button>
-      <span className="text-gray-400">/</span>
+      <span className="text-warm-gray-300 select-none">|</span>
       <button
         onClick={() => setLanguage('zh')}
-        className={`transition-all duration-300 ${
+        className={`transition-colors duration-200 ${
           language === 'zh'
-            ? 'bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-bold'
-            : 'text-gray-400 hover:text-white'
+            ? 'text-amber-600 font-medium'
+            : 'text-warm-gray-400 hover:text-warm-gray-700'
         }`}
       >
         中
