@@ -8,31 +8,31 @@ function PublicationCard({ pub }: { pub: (typeof publications)[0] }) {
   const { language, t } = useLanguage();
 
   return (
-    <div className="bg-[#111827] rounded-xl p-6 border border-gray-800 hover:border-gray-600 transition-colors duration-300">
-      <h3 className="text-lg font-semibold text-white mb-2">{pub.title}</h3>
+    <div className="bg-white rounded border border-amber-900/10 p-6 hover:border-amber-900/20 hover:shadow-[0_4px_20px_rgba(184,134,74,0.08)] transition-all duration-300">
+      <h3 className="font-display text-lg text-warm-gray-900 mb-2 leading-snug">{pub.title}</h3>
 
-      <p className="text-sm text-gray-300 mb-2">
+      <p className="text-sm text-warm-gray-600 mb-2">
         {pub.authors.map((author, i) => (
           <span key={author}>
             {author === 'Zhiye Tang' ? (
-              <strong className="text-primary">{author}</strong>
+              <span className="text-amber-600 font-medium">{author}</span>
             ) : (
               <span>{author}</span>
             )}
-            {i < pub.authors.length - 1 && <span className="text-gray-500">, </span>}
+            {i < pub.authors.length - 1 && <span className="text-warm-gray-400">, </span>}
           </span>
         ))}
       </p>
 
       <div className="flex flex-wrap items-center gap-3 mb-3">
-        <span className="text-secondary text-sm italic">{pub.venue}</span>
-        <span className="text-gray-400 text-sm">{pub.year}</span>
+        <span className="text-sage-600 text-sm italic">{pub.venue}</span>
+        <span className="text-warm-gray-400 text-sm">{pub.year}</span>
         {pub.doi && (
           <a
             href={`https://doi.org/${pub.doi}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-gray-500 hover:text-primary transition-colors duration-200 underline underline-offset-2"
+            className="text-xs text-warm-gray-400 hover:text-amber-600 transition-colors duration-200 underline underline-offset-2"
           >
             DOI: {pub.doi}
           </a>
@@ -41,13 +41,13 @@ function PublicationCard({ pub }: { pub: (typeof publications)[0] }) {
 
       <button
         onClick={() => setExpanded(!expanded)}
-        className="text-xs text-secondary hover:text-primary transition-colors duration-200 font-medium"
+        className="text-xs text-amber-600 hover:text-amber-700 transition-colors duration-200 font-medium"
       >
         {expanded ? t('publications_hide_abstract') : t('publications_show_abstract')}
       </button>
 
       {expanded && (
-        <p className="mt-3 text-sm text-gray-400 leading-relaxed border-t border-gray-700 pt-3">
+        <p className="mt-3 text-sm text-warm-gray-500 leading-relaxed border-t border-amber-900/8 pt-3">
           {pub.abstract[language]}
         </p>
       )}
@@ -60,11 +60,11 @@ export function Publications() {
   const { ref, className } = useScrollAnimation();
 
   return (
-    <section id="publications" className="py-20 bg-[#0a0a0f]">
+    <section id="publications" className="py-20 bg-[#F0EDE6]">
       <div ref={ref} className={`max-w-4xl mx-auto px-6 ${className}`}>
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-white mb-3">{t('section_publications')}</h2>
-          <div className="mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-primary to-secondary" />
+          <h2 className="font-display text-3xl text-warm-gray-900 mb-4">{t('section_publications')}</h2>
+          <div className="divider-gold mx-auto" />
         </div>
 
         <div className="flex flex-col gap-6">
