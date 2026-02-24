@@ -37,6 +37,13 @@ export interface Publication {
   abstract: BilingualText;
 }
 
+export interface Patent {
+  title: BilingualText;
+  inventors: string[];
+  patentNumber: string;
+  description: BilingualText;
+}
+
 export interface Experience {
   company: BilingualText;
   role: BilingualText;

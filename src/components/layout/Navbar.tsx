@@ -6,6 +6,7 @@ const navLinks = [
   { key: 'nav_about' as const, href: '#hero' },
 
   { key: 'nav_publications' as const, href: '#publications' },
+  { key: 'nav_patents' as const, href: '#patents' },
   { key: 'nav_experience' as const, href: '#experience' },
   { key: 'nav_education' as const, href: '#education' },
   { key: 'nav_contact' as const, href: '#contact' },

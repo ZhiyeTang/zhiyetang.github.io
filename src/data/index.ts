@@ -3,6 +3,7 @@ import type {
   SkillGroup,
   Project,
   Publication,
+  Patent,
   Experience,
   Education,
   ContactInfo,
@@ -115,6 +116,34 @@ export const publications: Publication[] = [
     },
   },
 ];
+
+export const patents: Patent[] = [
+  {
+    title: {
+      en: 'A Method, Device, Terminal and Medium for Volumetric Video Streaming Scheduling',
+      zh: '一种体积视频流式调度方法、装置、终端及介质',
+    },
+    inventors: ['Xu Wang', 'Zhiye Tang', 'Qiudan Zhang', 'Yu Zhou'],
+    patentNumber: 'ZL 202410355282.0',
+    description: {
+      en: 'A volumetric video streaming scheduling method for efficient content delivery.',
+      zh: '一种用于高效内容传输的体积视频流式调度方法。',
+    },
+  },
+  {
+    title: {
+      en: 'A 3DGS-based Volumetric Scene Streaming Method, Device and Medium',
+      zh: '基于3DGS的体积场景流式传输方法、装置及介质',
+    },
+    inventors: ['Xu Wang', 'Zhiye Tang', 'Qiudan Zhang', 'Yaojian Xu', 'Jianmin Jiang'],
+    patentNumber: 'ZL 202411095681.4',
+    description: {
+      en: 'A streaming method for volumetric scenes based on 3D Gaussian Splatting.',
+      zh: '一种基于3D高斯泼溅的体积场景流式传输方法。',
+    },
+  },
+];
+
 
 export const experience: Experience[] = [
   {

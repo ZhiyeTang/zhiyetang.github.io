@@ -33,6 +33,12 @@ export const translations = {
     publications_abstract: 'Abstract',
     publications_show_abstract: 'Show Abstract',
     publications_hide_abstract: 'Hide Abstract',
+    // Patents
+    nav_patents: 'Patents',
+    section_patents: 'Patents',
+    patents_subtitle: 'Granted patents',
+    patents_show_description: 'Show Description',
+    patents_hide_description: 'Hide Description',
     // Experience
     experience_subtitle: 'My professional journey',
     // Education
@@ -78,6 +84,12 @@ export const translations = {
     publications_abstract: '摘要',
     publications_show_abstract: '展开摘要',
     publications_hide_abstract: '收起摘要',
+    // Patents
+    nav_patents: '专利',
+    section_patents: '授权专利',
+    patents_subtitle: '已授权专利',
+    patents_show_description: '展开描述',
+    patents_hide_description: '收起描述',
     // Experience
     experience_subtitle: '我的经历',
     // Education
