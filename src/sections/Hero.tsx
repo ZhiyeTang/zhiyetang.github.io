@@ -41,7 +41,7 @@ export default function Hero() {
         <div className="flex flex-wrap gap-4 justify-center mt-1">
           <a
             href="#publications"
-            className="px-7 py-2.5 rounded-md bg-amber-600 text-white text-sm font-medium hover:bg-amber-700 transition-colors duration-200 shadow-sm"
+            className="px-7 py-2.5 rounded-md bg-amber-600 text-warm-gray-900 text-sm font-medium hover:bg-amber-700 hover:text-white transition-colors duration-200 shadow-sm"
           >
             {t('hero_cta_projects')}
           </a>
