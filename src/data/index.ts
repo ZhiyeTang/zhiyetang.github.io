@@ -12,11 +12,11 @@ import type {
 export const personalInfo: PersonalInfo = {
   name: 'Zhiye Tang',
   title: {
-    en: 'Computer Vision Algorithm Engineer @ vivo',
+    en: 'Image Algorithm Engineer @ vivo',
     zh: 'vivo 影像算法工程师',
   },
   bio: {
-    en: 'Algorithm engineer at vivo, focusing on multimodal large model-based data annotation, on-device visual perception, and model deployment. Previously a postgraduate researcher at Shenzhen University (FMC Lab), working on Deep Reinforcement Learning, Volumetric Video Streaming, and 3D Gaussian Splatting.',
+    en: 'Image algorithm engineer at vivo, focusing on multimodal large model-based data annotation, on-device visual perception, and model deployment. Previously a postgraduate research student at Shenzhen University (FMC Lab), working on Deep Reinforcement Learning, Volumetric Video Streaming, and 3D Gaussian Splatting.',
     zh: 'vivo影像规划预研部算法工程师，主要从事基于多模态大模型的数据自动标注、端侧视觉感知模型等技术的预研、开发与部署。此前于深圳大学未来媒体计算研究所（FMC）从事深度强化学习、体积视频流媒体与3D高斯泼溅相关研究。',
   },
   avatar: '',
@@ -63,7 +63,7 @@ export const publications: Publication[] = [
   {
     title: 'ProGS: Towards Progressive Coding for 3D Gaussian Splatting',
     authors: ['Zhiye Tang', 'Liang Liu', 'Shengxiang Jiao', 'Qiudan Zhang', 'Jianqiang Hou', 'Yong Yang', 'Xu Wang'],
-    venue: 'IEEE Transactions on Image Processing (TIP), Under Review',
+    venue: 'Under Review',
     year: 2025,
     doi: '',
     abstract: {
@@ -74,7 +74,7 @@ export const publications: Publication[] = [
   {
     title: 'GSStream: 3D Gaussian Splatting based Volumetric Scene Streaming System',
     authors: ['Zhiye Tang', 'Qiudan Zhang', 'Lei Zhang', 'Jianqiang Hou', 'Yong Yang', 'Xu Wang'],
-    venue: 'IEEE Transactions on Circuits and Systems for Video Technology (TCSVT), Under Review',
+    venue: 'Under Review',
     year: 2025,
     doi: '',
     abstract: {
@@ -85,7 +85,7 @@ export const publications: Publication[] = [
   {
     title: 'Geometry-Adaptive 3D Convex Polyhedron for Tomographic Reconstruction',
     authors: ['Yaobin Xu', 'Zhiye Tang', 'Liang Zou', 'Xu Wang', 'Rui Li'],
-    venue: 'Proceedings of the AAAI Conference on Artificial Intelligence (AAAI), Under Review',
+    venue: 'Under Review',
     year: 2025,
     doi: '',
     abstract: {
@@ -96,7 +96,7 @@ export const publications: Publication[] = [
   {
     title: 'SeCo-GS: Towards Semantic Feature Compression for 3D Gaussian Splatting',
     authors: ['Liang Liu', 'Zhiye Tang', 'Qiudan Zhang', 'Xu Wang'],
-    venue: 'ACM Transactions on Multimedia Computing, Communications, and Applications (TOMM), Under Review',
+    venue: 'Under Review',
     year: 2025,
     doi: '',
     abstract: {
@@ -148,11 +148,11 @@ export const patents: Patent[] = [
 export const experience: Experience[] = [
   {
     company: { en: 'vivo Mobile Communication Co., Ltd.', zh: 'vivo移动通信有限公司' },
-    role: { en: 'Computer Vision Algorithm Engineer, Image Planning & Pre-research Dept.', zh: '影像规划预研部 影像算法工程师' },
+    role: { en: 'Image Algorithm Engineer, Image Planning & Pre-research Dept.', zh: '影像规划预研部 影像算法工程师' },
     period: '2025.05 - Present',
     description: {
-      en: 'R&D on multimodal large model-based data auto-annotation, on-device visual perception model development and deployment. Key projects: (1) Dual-device (smart glasses + phone) occlusion detection & segmentation — developed INT8 quantized models via AIMET/QNN for glasses and FP16 single-backbone dual-head models for phone, achieving 97%+ detection accuracy and 86%+ segmentation Soft-IoU, surpassing Meta Ray-Ban AI. (2) AI visual effect recommendation for phone album — deployed GLM-4.1V-9B-Thinking on Kunlun P800 XPU with 30x inference speedup, built 200K image dataset, and implemented XPU-native differentiable sorting operators with 260x speedup over NumPy.',
-      zh: '主要从事基于多模态大模型的数据自动标注、端侧视觉感知模型等技术的预研、开发与部署。核心项目：(1) 眼镜-手机双端遮挡检测与分割——使用AIMET/QNN框架开发INT8量化模型（眼镜端）和FP16单骨干双头模型（手机端），检测准确率超97%，分割Soft-IoU超86%，显著超越Meta Ray-Ban AI眼镜。(2) 手机相册AI视效智能推荐——在昆仑芯P800 XPU上部署GLM-4.1V-9B-Thinking实现30倍推理加速，构建20万张图像数据集，实现XPU原生可微排序算子较NumPy取得数百倍加速。',
+      en: '',
+      zh: '',
     },
   },
   {
@@ -160,20 +160,11 @@ export const experience: Experience[] = [
       en: 'Research Institute for Future Media Computing (FMC), Shenzhen University',
       zh: '深圳大学未来媒体计算研究所（FMC）',
     },
-    role: { en: 'Postgraduate Researcher', zh: '硕士研究生' },
+    role: { en: 'Postgraduate Research Student', zh: '硕士研究生' },
     period: '2022.09 - 2025.07',
     description: {
-      en: 'Research on Deep Reinforcement Learning, Volumetric Video Streaming, and 3D Gaussian Splatting under the supervision of Dr. Xu Wang. First-authored papers on progressive 3DGS coding (ProGS), 3DGS streaming (GSStream), and eye fixation-based streaming optimization. Developed CUDA operators and built large-scale user behavior datasets (860K+ frames).',
-      zh: '在王旭博士指导下从事深度强化学习、体积视频流媒体与3D高斯泼溅研究。以第一作者发表了渐进式3DGS编码（ProGS）、体积场景流媒体（GSStream）、基于眼动注视的流媒体优化等论文。开发CUDA算子，构建超过86万帧的大规模用户行为数据集。',
-    },
-  },
-  {
-    company: { en: 'ACM Multimedia (ACMMM) 2024', zh: 'ACM多媒体（ACMMM）2024' },
-    role: { en: 'Conference Reviewer', zh: '会议审稿人' },
-    period: '2024.04',
-    description: {
-      en: 'Served as a reviewer for ACM Multimedia 2024 conference.',
-      zh: '担任ACM Multimedia 2024会议审稿人。',
+      en: '',
+      zh: '',
     },
   },
   {
@@ -181,8 +172,8 @@ export const experience: Experience[] = [
     role: { en: 'Team Leader', zh: '队长' },
     period: '2022',
     description: {
-      en: 'Led a team using PPO-based deep reinforcement learning to train game AI agents. Designed multi-route MoE modules for hero-specific expertise and tuned reward functions. Achieved Diamond-rank level performance, ranking 8th nationally.',
-      zh: '带领团队使用基于PPO的深度强化学习算法训练游戏智能体。设计多路MoE模块实现英雄专精，调整奖励函数微调模型。达到星耀段位水平，获得全国第8名。',
+      en: '',
+      zh: '',
     },
   },
 ];
@@ -190,7 +181,7 @@ export const experience: Experience[] = [
 export const education: Education[] = [
   {
     school: { en: 'Shenzhen University', zh: '深圳大学' },
-    degree: { en: 'Master of Engineering - MEng, Computer Software Engineering', zh: '工学硕士，计算机软件工程' },
+    degree: { en: 'Master of Engineering - MEng, Software Engineering', zh: '工学硕士，软件工程' },
     period: '2022.09 - 2025.07',
     gpa: '',
   },
@@ -202,7 +193,7 @@ export const education: Education[] = [
   },
   {
     school: { en: 'Shenzhen University', zh: '深圳大学' },
-    degree: { en: 'Bachelor of Engineering - BE, Mechatronics, Robotics, and Automation Engineering', zh: '工学学士，机电、机器人与自动化工程' },
+    degree: { en: 'Bachelor of Engineering - BE, Automation', zh: '工学学士，自动化' },
     period: '2018.09 - 2022.07',
     gpa: '',
   },

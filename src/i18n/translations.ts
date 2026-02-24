@@ -10,7 +10,7 @@ export const translations = {
     nav_contact: 'Contact',
     // Hero
     hero_greeting: 'Hi, I\'m',
-    hero_title: 'Postgraduate Researcher',
+    hero_title: 'Image Algorithm Engineer',
     hero_bio: 'Working in the field of Deep Reinforcement Learning and Volumetric Video Streaming at Shenzhen University.',
     hero_cta_projects: 'View Publications',
     hero_cta_contact: 'Contact Me',
@@ -61,7 +61,7 @@ export const translations = {
     nav_contact: '联系',
     // Hero
     hero_greeting: '你好，我是',
-    hero_title: '硕士研究生',
+    hero_title: '影像算法工程师',
     hero_bio: '深圳大学未来媒体计算研究所，研究方向为深度强化学习与体积视频流媒体。',
     hero_cta_projects: '查看发表',
     hero_cta_contact: '联系我',
