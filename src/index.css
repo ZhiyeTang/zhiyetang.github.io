@@ -1,19 +1,319 @@
 @import "tailwindcss";
 @config "../tailwind.config.js";
 
-html {
-  background-color: #0a0a0f;
-  color: #f1f5f9;
-  scroll-behavior: smooth;
+/* ============================================================
+   CSS CUSTOM PROPERTIES — Design Token System
+   ============================================================ */
+:root {
+  /* Backgrounds — warm cream light theme */
+  --color-bg-base:    #F0EDE6;
+  --color-bg-surface: #FAFAF7;
+  --color-bg-raised:  #FFFFFF;
+  --color-bg-overlay: #EDE8DC;
+
+  /* Amber/tan accent family */
+  --color-amber-dim:   #9A6E38;
+  --color-amber:       #B8864A;
+  --color-amber-light: #C9A97A;
+  --color-amber-pale:  #E8D4B0;
+
+  /* Sage green secondary */
+  --color-sage:       #7A9A6B;
+  --color-sage-dim:   #6A8C52;
+  --color-sage-deep:  #3D6B3A;
+
+  /* Text — dark on light */
+  --color-text-primary:   #1C1A18;
+  --color-text-secondary: #2E2E2A;
+  --color-text-muted:     #A09A90;
+  --color-text-accent:    #B8864A;
+
+  /* Borders */
+  --color-border:       rgba(184, 134, 74, 0.18);
+  --color-border-hover: rgba(184, 134, 74, 0.40);
+
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Source Serif 4', Georgia, serif;
+
+  /* Spacing rhythm */
+  --section-padding: clamp(4rem, 10vw, 8rem);
+
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:   cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast:   150ms;
+  --duration-base:   300ms;
+  --duration-slow:   600ms;
+  --duration-slower: 900ms;
 }
 
+/* ============================================================
+   BASE RESET & GLOBAL STYLES
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-base);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   PAPER TEXTURE OVERLAY — subtle warmth
+   ============================================================ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   TYPOGRAPHY SCALE
+   ============================================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 5rem);   font-weight: 400; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.8rem, 4vw, 3rem);   font-weight: 400; }
+h3 { font-size: clamp(1.3rem, 2.5vw, 2rem); font-weight: 500; }
+h4 { font-size: clamp(1.1rem, 2vw, 1.5rem); font-weight: 500; }
+
+p {
+  font-family: var(--font-body);
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+}
+
+a {
+  color: var(--color-amber);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-in-out);
+}
+a:hover {
+  color: var(--color-amber-dim);
+}
+
+
+/* ============================================================
+   SCROLLBAR — warm amber thread on cream
+   ============================================================ */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0f;
+  background: var(--color-bg-overlay);
 }
 ::-webkit-scrollbar-thumb {
-  background: #6366f1;
-  border-radius: 3px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-amber-dim),
+    var(--color-amber)
+  );
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-amber-light);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-amber-dim) var(--color-bg-overlay);
+}
+
+/* ============================================================
+   SELECTION
+   ============================================================ */
+::selection {
+  background: rgba(184, 134, 74, 0.20);
+  color: var(--color-text-primary);
+}
+
+/* ============================================================
+   KEYFRAME ANIMATIONS
+   ============================================================ */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes pulse-amber {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(184, 134, 74, 0); }
+  50%       { box-shadow: 0 0 0 6px rgba(184, 134, 74, 0.12); }
+}
+
+@keyframes line-grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* ============================================================
+   ANIMATION UTILITY CLASSES
+   ============================================================ */
+.animate-fade-in       { animation: fade-in       var(--duration-slow) var(--ease-out-expo) both; }
+.animate-slide-up      { animation: slide-up      var(--duration-slow) var(--ease-out-expo) both; }
+.animate-slide-in-left { animation: slide-in-left var(--duration-slow) var(--ease-out-expo) both; }
+.animate-slide-in-right{ animation: slide-in-right var(--duration-slow) var(--ease-out-expo) both; }
+.animate-scale-in      { animation: scale-in      var(--duration-slow) var(--ease-out-expo) both; }
+
+/* Stagger delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
+
+/* ============================================================
+   SHIMMER TEXT EFFECT — warm amber
+   ============================================================ */
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-amber-dim) 0%,
+    var(--color-amber-pale) 40%,
+    var(--color-amber) 60%,
+    var(--color-amber-dim) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ============================================================
+   SURFACE / CARD BASE
+   ============================================================ */
+.surface {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  transition:
+    border-color var(--duration-base) var(--ease-in-out),
+    box-shadow   var(--duration-base) var(--ease-in-out);
+}
+.surface:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: 0 8px 32px rgba(184, 134, 74, 0.10),
+              0 0 0 1px rgba(184, 134, 74, 0.06);
+}
+
+/* ============================================================
+   AMBER DIVIDER LINE
+   ============================================================ */
+.divider-gold {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-amber-dim) 20%,
+    var(--color-amber) 50%,
+    var(--color-amber-dim) 80%,
+    transparent
+  );
+  transform-origin: left;
+}
+
+/* ============================================================
+   MESH GRADIENT BACKGROUND — sunlit warmth
+   ============================================================ */
+.bg-mesh {
+  background-color: var(--color-bg-base);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 20% 10%,  rgba(201, 169, 122, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 90%,  rgba(122, 154, 107, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 60% 40%,  rgba(184, 134, 74, 0.06) 0%, transparent 50%);
+}
+
+/* ============================================================
+   FOCUS STYLES — accessibility
+   ============================================================ */
+:focus-visible {
+  outline: 2px solid var(--color-amber);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
