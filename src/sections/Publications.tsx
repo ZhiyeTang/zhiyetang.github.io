@@ -8,10 +8,10 @@ function PublicationCard({ pub }: { pub: (typeof publications)[0] }) {
   const { language, t } = useLanguage();
 
   return (
-    <div className="bg-white rounded border border-amber-900/10 p-6 hover:border-amber-900/20 hover:shadow-[0_4px_20px_rgba(184,134,74,0.08)] transition-all duration-300">
-      <h3 className="font-display text-lg text-warm-gray-900 mb-2 leading-snug">{pub.title}</h3>
+    <div className="bg-white rounded border border-amber-900/10 px-5 py-4 hover:border-amber-900/20 hover:shadow-[0_4px_20px_rgba(184,134,74,0.08)] transition-all duration-300">
+      <h3 className="font-display text-base text-warm-gray-900 mb-1 leading-snug">{pub.title}</h3>
 
-      <p className="text-sm text-warm-gray-600 mb-2">
+      <p className="text-sm text-warm-gray-600 mb-1.5">
         {pub.authors.map((author, i) => (
           <span key={author}>
             {author === 'Zhiye Tang' ? (
@@ -24,7 +24,7 @@ function PublicationCard({ pub }: { pub: (typeof publications)[0] }) {
         ))}
       </p>
 
-      <div className="flex flex-wrap items-center gap-3 mb-3">
+      <div className="flex flex-wrap items-center gap-2 mb-2">
         <span className="text-sage-600 text-sm italic">{pub.venue}</span>
         <span className="text-warm-gray-400 text-sm">{pub.year}</span>
         {pub.doi && (
@@ -67,7 +67,7 @@ export function Publications() {
           <div className="divider-gold mx-auto" />
         </div>
 
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4">
           {publications.map((pub, index) => (
             <PublicationCard key={pub.doi || index} pub={pub} />
           ))}
