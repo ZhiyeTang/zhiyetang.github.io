@@ -63,9 +63,9 @@ export const publications: Publication[] = [
   {
     title: 'ProGS: Towards Progressive Coding for 3D Gaussian Splatting',
     authors: ['Zhiye Tang', 'Lingzhuo Liu', 'Shengjie Jiao', 'Qiudan Zhang', 'Junhui Hou', 'Yong Yang', 'Xu Wang'],
-    venue: 'Under Review',
+    venue: 'arXiv',
     year: 2026,
-    doi: '',
+    doi: 'https://arxiv.org/abs/2603.09703',
     abstract: {
       en: 'With the emergence of 3D Gaussian Splatting (3DGS), numerous pioneering efforts have been made to address the effective compression issue of massive 3DGS data. 3DGS offers an efficient and scalable representation of 3D scenes by utilizing learnable 3D Gaussians, but the large size of the generated data has posed significant challenges for storage and transmission. Existing methods, however, have been limited by their inability to support progressive coding, a crucial feature in streaming applications with varying bandwidth. To tackle this limitation, this paper introduce a novel approach that organizes 3DGS data into an octree structure, enabling efficient progressive coding. The proposed ProGS is a streaming-friendly codec that facilitates progressive coding for 3D Gaussian splatting, and significantly improves both compression efficiency and visual fidelity. The proposed method incorporates mutual information enhancement mechanisms to mitigate structural redundancy, leveraging the relevance between nodes in the octree hierarchy. By adapting the octree structure and dynamically adjusting the anchor nodes, ProGS ensures scalable data compression without compromising the rendering quality. ProGS achieves a remarkable 45× reduction in file storage compared to the original 3DGS format, while simultaneously improving visual performance by over 10%. This demonstrates that ProGS can provide a robust solution for real-time applications with varying network conditions.',
       zh: '随着3D高斯泼溅（3DGS）的出现，大量开创性工作致力于解决海量3DGS数据的有效压缩问题。3DGS通过可学习的三维高斯提供了高效且可扩展的三维场景表示，但生成数据的庞大体量给存储和传输带来了重大挑战。然而，现有方法无法支持渐进式编码——这在带宽变化的流媒体应用中是一项关键特性。为解决这一局限，本文提出了一种将3DGS数据组织为八叉树结构的新方法，实现高效的渐进式编码。所提出的ProGS是一种流媒体友好的编解码器，支持3DGS的渐进式编码，并显著提升了压缩效率和视觉保真度。该方法引入互信息增强机制以减少结构冗余，利用八叉树层级中节点间的相关性。通过自适应调整八叉树结构和动态调整锚点节点，ProGS在不损害渲染质量的前提下实现了可扩展的数据压缩。与原始3DGS格式相比，ProGS实现了45倍的文件存储缩减，同时视觉性能提升超过10%，为网络条件多变的实时应用提供了稳健的解决方案。',
@@ -118,9 +118,9 @@ export const publications: Publication[] = [
   {
     title: 'GSStream: 3D Gaussian Splatting based Volumetric Scene Streaming System',
     authors: ['Zhiye Tang', 'Qiudan Zhang', 'Lei Zhang', 'Junhui Hou', 'Yong Yang', 'Xu Wang'],
-    venue: 'Under Review',
+    venue: 'arXiv',
     year: 2025,
-    doi: '',
+    doi: 'https://arxiv.org/abs/2603.09718',
     abstract: {
       en: 'Recently, the 3D Gaussian splatting (3DGS) technique for real-time radiance field rendering has revolutionized the field of volumetric scene representation, providing users with an immersive experience. But in return, it also poses a large amount of data volume, which is extremely bandwidth-intensive. Cutting-edge researchers have tried to introduce different approaches and construct multiple variants for 3DGS to obtain a more compact scene representation, but it is still challenging for real-time distribution. In this paper, we propose GSStream, a novel volumetric scene streaming system to support 3DGS data format. Specifically, GSStream integrates a collaborative viewport prediction module to better predict users\' future behaviors by learning collaborative priors and historical priors from multiple users and users\' viewport sequences and a deep reinforcement learning (DRL)-based bitrate adaptation module to tackle the state and action space variability challenge of the bitrate adaptation problem, achieving efficient volumetric scene delivery. Besides, we first build a user viewport trajectory dataset for volumetric scenes to support the training and streaming simulation. Extensive experiments prove that our proposed GSStream system outperforms existing representative volumetric scene streaming systems in visual quality and network usage. Demo video: https://youtu.be/3WEe8PN8yvA.',
       zh: '近年来，用于实时辐射场渲染的3D高斯泼溅（3DGS）技术革新了体积场景表示领域，为用户提供了沉浸式体验，但同时也带来了大量数据，对带宽要求极高。前沿研究者尝试引入不同方法并构建多种3DGS变体以获得更紧凑的场景表示，但实时分发仍面临挑战。本文提出GSStream，一种支持3DGS数据格式的新型体积场景流媒体系统。具体而言，GSStream集成了协作视口预测模块，通过学习多用户的协作先验和用户视口序列的历史先验来预测用户未来行为，以及基于深度强化学习（DRL）的码率自适应模块来解决码率自适应问题中状态和动作空间可变性的挑战，实现高效的体积场景传输。此外，我们首次构建了体积场景的用户视口轨迹数据集以支持训练和流媒体仿真。大量实验证明，所提出的GSStream系统在视觉质量和网络利用率方面优于现有代表性体积场景流媒体系统。',
