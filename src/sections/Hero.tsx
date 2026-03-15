@@ -34,9 +34,11 @@ export default function Hero() {
 
         <div className="divider-gold w-16 mx-auto" />
 
-        <p className="font-sans text-warm-gray-500 max-w-xl text-center leading-relaxed text-base">
-          {personalInfo.bio[language]}
-        </p>
+        <p className="font-sans text-warm-gray-500 max-w-xl text-center leading-relaxed text-base"
+           dangerouslySetInnerHTML={{ 
+             __html: personalInfo.bio[language].replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-amber-600 hover:text-amber-800 underline">$1</a>') 
+           }}
+        />
 
         <div className="flex flex-wrap gap-4 justify-center mt-1">
           <a
