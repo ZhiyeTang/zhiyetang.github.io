@@ -14,7 +14,7 @@ function PublicationCard({ pub }: { pub: (typeof publications)[0] }) {
       <p className="text-sm text-warm-gray-600 mb-1.5">
         {pub.authors.map((author, i) => (
           <span key={author}>
-            {author === 'Zhiye Tang' ? (
+            {author === 'Zhiye Tang' || author === 'Zhiye Tang†' ? (
               <span className="text-amber-600 font-medium">{author}</span>
             ) : (
               <span>{author}</span>
