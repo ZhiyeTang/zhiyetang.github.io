@@ -206,7 +206,7 @@ export const education: Education[] = [
     degree: { en: 'Visiting Research Student, Computer Science', zh: '访问研究生 计算机科学' },
     period: '2024.12 - 2025.02',
     gpa: '',
-    logo: '/logos/cityu-logo.png',
+    logo: '/logos/cityuhk-logo.png',
   },
   {
     school: { en: 'Shenzhen University', zh: '深圳大学' },
