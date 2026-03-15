@@ -213,6 +213,7 @@ export const education: Education[] = [
     degree: { en: 'Bachelor of Engineering, Automation', zh: '工学学士 自动化' },
     period: '2018.09 - 2022.07',
     gpa: '',
+    logo: '/logos/szu-logo.png',
   },
 ];
 
