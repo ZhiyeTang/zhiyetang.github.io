@@ -49,6 +49,7 @@ export interface Experience {
   role: BilingualText;
   period: string;
   description: BilingualText;
+  logo?: string;
 }
 
 export interface Education {
@@ -56,6 +57,7 @@ export interface Education {
   degree: BilingualText;
   period: string;
   gpa: string;
+  logo?: string;
 }
 
 export interface ContactInfo {

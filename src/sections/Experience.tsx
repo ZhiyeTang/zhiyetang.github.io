@@ -38,6 +38,11 @@ export default function Experience() {
                     ${isEven ? 'md:mr-auto md:ml-0' : 'md:ml-auto'}
                   `}
                 >
+                  {exp.logo ? (
+                    <div className="w-12 h-12 mb-3 flex items-center justify-center bg-[#F0EDE6] rounded-lg p-1">
+                      <img src={exp.logo} alt={exp.company[language]} className="max-w-full max-h-full object-contain" />
+                    </div>
+                  ) : null}
                   <p className="text-warm-gray-400 text-sm mb-1">{exp.period}</p>
                   <h3 className="text-lg font-display text-warm-gray-900">{exp.company[language]}</h3>
                   <p className="text-amber-600 text-sm font-medium mb-3">{exp.role[language]}</p>

@@ -176,6 +176,7 @@ export const experience: Experience[] = [
       en: '',
       zh: '',
     },
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Vivo_logo.svg/120px-Vivo_logo.svg.png',
   },
   {
     company: {
@@ -188,6 +189,7 @@ export const experience: Experience[] = [
       en: '',
       zh: '',
     },
+    logo: 'https://upload.wikimedia.org/wikipedia/en/0/0e/Shenzhen_University_Logo.png',
   },
 ];
 
@@ -197,12 +199,14 @@ export const education: Education[] = [
     degree: { en: 'Master of Engineering, Software Engineering', zh: '电子信息硕士 软件工程' },
     period: '2022.09 - 2025.07',
     gpa: '',
+    logo: 'https://upload.wikimedia.org/wikipedia/en/0/0e/Shenzhen_University_Logo.png',
   },
   {
     school: { en: 'City University of Hong Kong', zh: '香港城市大学' },
     degree: { en: 'Visiting Research Student, Computer Science', zh: '访问研究生 计算机科学' },
     period: '2024.12 - 2025.02',
     gpa: '',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/CityU_logo.svg/120px-CityU_logo.svg.png',
   },
   {
     school: { en: 'Shenzhen University', zh: '深圳大学' },

@@ -25,10 +25,15 @@ export default function Education() {
                 key={index}
                 className="bg-[#F0EDE6] rounded-xl p-6 border border-amber-900/10 hover:border-amber-300 hover:shadow-md hover:shadow-amber-100/60 transition-all duration-300"
               >
-
-                <div className="w-10 h-10 rounded-full bg-sage-100 border border-sage-200 flex items-center justify-center text-lg mb-4">
-                  🎓
-                </div>
+                {edu.logo ? (
+                  <div className="w-12 h-12 mb-4 flex items-center justify-center bg-white rounded-lg p-1">
+                    <img src={edu.logo} alt={edu.school[language]} className="max-w-full max-h-full object-contain" />
+                  </div>
+                ) : (
+                  <div className="w-10 h-10 rounded-full bg-sage-100 border border-sage-200 flex items-center justify-center text-lg mb-4">
+                    🎓
+                  </div>
+                )}
 
 
                 <h3 className="text-xl font-display text-warm-gray-900 mb-1">
