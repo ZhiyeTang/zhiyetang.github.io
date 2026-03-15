@@ -26,8 +26,8 @@ export default function Education() {
                 className="bg-[#F0EDE6] rounded-xl p-6 border border-amber-900/10 hover:border-amber-300 hover:shadow-md hover:shadow-amber-100/60 transition-all duration-300"
               >
                 {edu.logo ? (
-                  <div className="w-12 h-12 mb-4 flex items-center justify-center bg-white rounded-lg p-1 border border-gray-200">
-                    <img src={edu.logo} alt={edu.school[language]} className="max-w-full max-h-full object-contain" onError={(e) => {
+                  <div className="w-12 h-12 mb-4 flex items-center justify-center bg-white rounded-lg p-1 border border-gray-200" style={{ minWidth: '48px', minHeight: '48px' }}>
+                    <img src={edu.logo} alt={edu.school[language]} className="w-full h-full object-contain" onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.style.display = 'none';
                       target.parentElement!.innerHTML = '<span class="text-2xl">🏫</span>';

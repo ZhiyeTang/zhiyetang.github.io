@@ -39,8 +39,8 @@ export default function Experience() {
                   `}
                 >
                   {exp.logo ? (
-                    <div className="w-12 h-12 mb-3 flex items-center justify-center bg-[#F0EDE6] rounded-lg p-1 border border-gray-200">
-                      <img src={exp.logo} alt={exp.company[language]} className="max-w-full max-h-full object-contain" onError={(e) => {
+                    <div className="w-12 h-12 mb-3 flex items-center justify-center bg-[#F0EDE6] rounded-lg p-1 border border-gray-200" style={{ minWidth: '48px', minHeight: '48px' }}>
+                      <img src={exp.logo} alt={exp.company[language]} className="w-full h-full object-contain" onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.style.display = 'none';
                         target.parentElement!.innerHTML = '<span class="text-2xl">💼</span>';
