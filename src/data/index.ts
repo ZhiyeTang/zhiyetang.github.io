@@ -96,7 +96,7 @@ export const publications: Publication[] = [
   {
     title: 'Geometry-Adaptive 3D Convex Polyhedron for Tomographic Reconstruction',
     authors: ['Yaojian Xu', 'Zhiye Tang', 'Longhao Zou', 'Xu Wang', 'Rui Li'],
-    venue: 'Under Review',
+    venue: 'IEEE International Conference on Multimedia and Expo (ICME)',
     year: 2026,
     doi: '',
     abstract: {
