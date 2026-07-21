@@ -1,0 +1,68 @@
+[
+  {
+    "id": "black-messiah",
+    "artist": "D’Angelo and The Vanguard",
+    "title": "Black Messiah",
+    "year": "2014",
+    "image": "/images/hell-records/black-messiah.webp",
+    "note": {
+      "en": "The record behind tonight’s needle drop.",
+      "zh": "今晚唱针落下的那张唱片。"
+    }
+  },
+  {
+    "id": "promise",
+    "artist": "Sade",
+    "title": "Promise",
+    "year": "1985",
+    "image": "/images/hell-records/promise.webp",
+    "note": {
+      "en": "Quiet confidence, satin-dark and precise.",
+      "zh": "安静、自持，像深色缎面一样精确。"
+    }
+  },
+  {
+    "id": "one-in-a-million",
+    "artist": "Aaliyah",
+    "title": "One in a Million",
+    "year": "1996",
+    "image": "/images/hell-records/one-in-a-million.webp",
+    "note": {
+      "en": "Future-facing rhythm with a featherlight touch.",
+      "zh": "轻盈触感之下，是面向未来的节奏。"
+    }
+  },
+  {
+    "id": "miseducation",
+    "artist": "Lauryn Hill",
+    "title": "The Miseducation of Lauryn Hill",
+    "year": "1998",
+    "image": "/images/hell-records/miseducation.webp",
+    "note": {
+      "en": "Soul, memory, and truth without polish.",
+      "zh": "灵魂、记忆和未经修饰的真实。"
+    }
+  },
+  {
+    "id": "donuts",
+    "artist": "J Dilla",
+    "title": "Donuts",
+    "year": "2006",
+    "image": "/images/hell-records/donuts.webp",
+    "note": {
+      "en": "A whole language built from fragments.",
+      "zh": "用碎片搭建出的一整套语言。"
+    }
+  },
+  {
+    "id": "songs-in-the-key-of-life",
+    "artist": "Stevie Wonder",
+    "title": "Songs in the Key of Life",
+    "year": "1976",
+    "image": "/images/hell-records/songs-in-the-key-of-life.webp",
+    "note": {
+      "en": "Generous, restless, and endlessly alive.",
+      "zh": "丰盛、不安分，而且永远鲜活。"
+    }
+  }
+]

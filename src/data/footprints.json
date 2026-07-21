@@ -1,0 +1,68 @@
+[
+  {
+    "id": "shenzhen",
+    "imagePath": "",
+    "city": {
+      "zh": "深圳",
+      "en": "Shenzhen"
+    },
+    "country": {
+      "zh": "中国",
+      "en": "China"
+    },
+    "year": "2018—2025",
+    "role": {
+      "zh": "本科 · 硕士 · 研究",
+      "en": "Bachelor · Master · Research"
+    },
+    "description": {
+      "zh": "本科与硕士阶段的学习，让我的实践从自动化延伸到软件工程与体积媒体研究。",
+      "en": "Undergraduate and postgraduate study shaped my practice across automation, software engineering, and volumetric-media research."
+    },
+    "artifact": {
+      "zh": "学习手记 · 研究草稿 · 最初认真构建的系统",
+      "en": "Study notes · research drafts · first systems built in earnest"
+    },
+    "coordinates": {
+      "latitude": 22.5431,
+      "longitude": 114.0579
+    },
+    "mapPosition": {
+      "x": 70,
+      "y": 58
+    }
+  },
+  {
+    "id": "hong-kong",
+    "imagePath": "",
+    "city": {
+      "zh": "香港",
+      "en": "Hong Kong"
+    },
+    "country": {
+      "zh": "中国",
+      "en": "China"
+    },
+    "year": "2024—2025",
+    "role": {
+      "zh": "访问研究学生",
+      "en": "Visiting Research Student"
+    },
+    "description": {
+      "zh": "计算机科学访问研究经历，为我的研究打开了更宽的观察尺度。",
+      "en": "A visiting research period in computer science widened the context around my research."
+    },
+    "artifact": {
+      "zh": "访问证件 · 阅读笔记 · 更宽的研究视野",
+      "en": "Visitor card · reading notes · a wider research horizon"
+    },
+    "coordinates": {
+      "latitude": 22.3193,
+      "longitude": 114.1694
+    },
+    "mapPosition": {
+      "x": 73,
+      "y": 30
+    }
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Vieux Carré",
+    "base": {
+      "en": "Rye · Cognac",
+      "zh": "黑麦威士忌 · 干邑"
+    },
+    "ingredients": {
+      "en": "Bénédictine · sweet vermouth · bitters",
+      "zh": "廊酒 · 甜味美思 · 苦精"
+    },
+    "note": {
+      "en": "Deep, herbal, and built for a long night.",
+      "zh": "深沉、草本，适合漫长夜晚。"
+    }
+  },
+  {
+    "name": "Last Word",
+    "base": {
+      "en": "Gin · Green Chartreuse",
+      "zh": "金酒 · 绿查特酒"
+    },
+    "ingredients": {
+      "en": "Maraschino · lime",
+      "zh": "黑樱桃利口酒 · 青柠"
+    },
+    "note": {
+      "en": "Herbal, sharp, perfectly balanced.",
+      "zh": "草本、锐利，平衡得恰到好处。"
+    }
+  },
+  {
+    "name": "Penicillin",
+    "base": {
+      "en": "Blended Scotch",
+      "zh": "调和苏格兰威士忌"
+    },
+    "ingredients": {
+      "en": "Lemon · honey · ginger · Islay mist",
+      "zh": "柠檬 · 蜂蜜 · 姜 · 艾雷威士忌"
+    },
+    "note": {
+      "en": "Smoky, bright, and quietly restorative.",
+      "zh": "烟熏、明亮，也带一点安抚感。"
+    }
+  },
+  {
+    "name": "Boulevardier",
+    "base": {
+      "en": "Bourbon · Campari",
+      "zh": "波本 · 金巴利"
+    },
+    "ingredients": {
+      "en": "Sweet vermouth · orange peel",
+      "zh": "甜味美思 · 橙皮"
+    },
+    "note": {
+      "en": "A darker, slower cousin of the Negroni.",
+      "zh": "更深、更慢的一杯内格罗尼。"
+    }
+  },
+  {
+    "name": "Mezcal Negroni",
+    "base": {
+      "en": "Mezcal · Campari",
+      "zh": "梅斯卡尔 · 金巴利"
+    },
+    "ingredients": {
+      "en": "Sweet vermouth · grapefruit oil",
+      "zh": "甜味美思 · 葡萄柚油"
+    },
+    "note": {
+      "en": "Bitter citrus through a veil of smoke.",
+      "zh": "苦柑橘穿过一层薄烟。"
+    }
+  },
+  {
+    "name": "Amaro Montenegro",
+    "base": {
+      "en": "Amaro",
+      "zh": "阿玛罗利口酒"
+    },
+    "ingredients": {
+      "en": "Soda · orange",
+      "zh": "苏打水 · 橙片"
+    },
+    "note": {
+      "en": "Bittersweet, citrusy, and unhurried.",
+      "zh": "苦甜、柑橘感，节奏从容。"
+    }
+  },
+  {
+    "name": "Japanese Highball",
+    "base": {
+      "en": "Japanese whisky",
+      "zh": "日式威士忌"
+    },
+    "ingredients": {
+      "en": "Cold soda · lemon expression",
+      "zh": "冰镇苏打 · 柠檬皮油"
+    },
+    "note": {
+      "en": "Cold, exact, almost architectural.",
+      "zh": "冰冷、精确，近乎建筑感。"
+    }
+  },
+  {
+    "name": "Rum Old Fashioned",
+    "base": {
+      "en": "Aged rum",
+      "zh": "陈年朗姆酒"
+    },
+    "ingredients": {
+      "en": "Demerara · aromatic bitters",
+      "zh": "德梅拉拉糖 · 芳香苦精"
+    },
+    "note": {
+      "en": "Warm spice with a slow caramel finish.",
+      "zh": "温暖香料，尾段是缓慢的焦糖。"
+    }
+  }
+]
