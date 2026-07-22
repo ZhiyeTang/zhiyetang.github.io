@@ -2,7 +2,7 @@
 
 ## 唐致烨 · Zhiye Tang
 
-![唐致烨手绘肖像](/images/portrait-handdrawn-v1.png "唐致烨 · Zhiye Tang")
+![唐致烨手绘肖像](/images/portrait-handdrawn-v1.webp "唐致烨 · Zhiye Tang")
 
 **让技术退后，让体验发生。**
 

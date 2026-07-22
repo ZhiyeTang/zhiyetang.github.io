@@ -2,7 +2,7 @@
 
 ## Zhiye Tang · 唐致烨
 
-![Hand-drawn portrait of Zhiye Tang](/images/portrait-handdrawn-v1.png "Zhiye Tang · 唐致烨")
+![Hand-drawn portrait of Zhiye Tang](/images/portrait-handdrawn-v1.webp "Zhiye Tang · 唐致烨")
 
 **Let technology recede, and let experience take the lead.**
 

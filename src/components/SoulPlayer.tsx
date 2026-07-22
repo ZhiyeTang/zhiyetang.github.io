@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { VinylRecord } from '@phosphor-icons/react'
 import type { Language } from '../lib/books'
 
-const DEFAULT_AUDIO_SOURCE = '/audio/isnt-she-lovely.ogg'
+const DEFAULT_AUDIO_SOURCE = '/audio/isnt-she-lovely.mp3'
 
 type Props = {
   language: Language
@@ -280,7 +280,7 @@ export default function SoulPlayer({
 
   return (
     <div className={`now-playing now-playing-${variant}${isPlaying ? ' is-playing' : ''}`} aria-live="polite">
-      <audio ref={audioRef} src={source} preload="metadata" onEnded={pausePlayback} />
+      <audio ref={audioRef} src={source} preload="none" onEnded={pausePlayback} />
       <VinylRecord size={34} weight="thin" aria-hidden="true" />
       <div className="now-playing-copy">
         <span>{isPlaying

@@ -97,7 +97,7 @@ export default function HeavenExperience({ language, isActive, trackTitle }: Pro
         language={language}
         toggleSignal={playbackToggle}
         onPlayingChange={setIsPlaying}
-        source="/audio/touching-god.ogg"
+        source="/audio/touching-god.mp3"
         artist="Daniel Caesar"
         title={trackTitle}
         variant="heaven"

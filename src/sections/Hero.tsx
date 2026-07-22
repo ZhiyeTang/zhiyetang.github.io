@@ -17,7 +17,7 @@ export default function Hero() {
       >
 
         <img
-          src="/hero.png"
+          src="/hero.webp"
           alt={personalInfo.name}
           className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover shadow-lg shadow-amber-900/15 ring-4 ring-amber-100"
         />

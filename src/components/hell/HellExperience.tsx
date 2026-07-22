@@ -232,7 +232,7 @@ export default function HellExperience({ language, isActive }: Props) {
           language={language}
           toggleSignal={playbackToggle}
           onPlayingChange={setIsPlaying}
-          source="/audio/really-love.ogg"
+          source="/audio/really-love.mp3"
           artist="D’Angelo and The Vanguard"
           title="Really Love"
           variant="hell"
