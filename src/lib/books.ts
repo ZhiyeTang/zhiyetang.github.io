@@ -3,7 +3,7 @@ export type BookKey = 'resume' | 'work' | 'education' | 'research' | 'patents' |
 
 export type MarkdownBlock =
   | { type: 'paragraph'; content: string }
-  | { type: 'heading'; level: 3 | 4 | 5 | 6; content: string }
+  | { type: 'heading'; level: 2 | 3 | 4 | 5 | 6; content: string }
   | { type: 'list'; ordered: boolean; items: string[] }
   | { type: 'image'; src: string; alt: string; caption?: string }
   | { type: 'blockquote'; content: string }
@@ -121,11 +121,15 @@ function parseBook(source: string, filePath: string): MarkdownBookPage[] {
   const flushTitlePage = () => {
     if (!title && !body.some((line) => line.trim())) return
     if (!chapter) throw new Error(`Content must follow a level-one chapter heading in ${filePath}`)
+    const contentTitle = title || chapter
     pages.push({
       kind: 'content',
       chapter,
-      title: title || chapter,
-      blocks: parseBlocks(body),
+      title: contentTitle,
+      blocks: [
+        ...(title ? [{ type: 'heading' as const, level: 2 as const, content: title }] : []),
+        ...parseBlocks(body),
+      ],
     })
     title = ''
     body = []

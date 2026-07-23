@@ -126,13 +126,8 @@ function buildPaginatedBook(
     const probe = probes[contentIndex]
     const elements = probe ? Array.from(probe.children) : []
     const chunks = paginateBlocks(page.blocks, elements, capacity)
-    let currentTitle = page.title
     chunks.forEach((blocks) => {
-      if (blocks[0]?.type === 'heading') currentTitle = blocks[0].content
-      output.push({ ...page, title: currentTitle, blocks })
-      blocks.forEach((block) => {
-        if (block.type === 'heading') currentTitle = block.content
-      })
+      output.push({ ...page, blocks })
     })
     contentIndex += 1
   })

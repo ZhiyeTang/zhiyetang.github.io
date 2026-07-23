@@ -1,10 +1,11 @@
-@import '@fontsource-variable/geist';
-@import '@fontsource/cormorant-garamond/400.css';
-@import '@fontsource/cormorant-garamond/400-italic.css';
-@import '@fontsource/cormorant-garamond/600.css';
+@import '@fontsource-variable/instrument-sans/wght.css';
+@import '@fontsource-variable/newsreader/wght.css';
+@import '@fontsource-variable/newsreader/wght-italic.css';
 
 :root {
-  font-family: 'Geist Variable', system-ui, sans-serif;
+  --font-ui: 'Instrument Sans Variable', 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  --font-reading: 'Newsreader Variable', 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'SimSun', serif;
+  font-family: var(--font-ui);
   color: #f2eadc;
   background: #090806;
   font-synthesis: none;
@@ -187,7 +188,16 @@ body:has(.library-layer) .realm-rail { opacity: 0; visibility: hidden; pointer-e
 .realm-marker-heaven { top: 0; }
 .realm-marker-earth { top: 250svh; }
 .realm-marker-hell { top: 500svh; }
-.realm-stage { position: sticky; top: 0; width: 100%; height: 100svh; overflow: hidden; background: #090806; }
+.realm-stage {
+  --now-playing-left: clamp(28px, 5.7vw, 108px);
+  --now-playing-bottom: max(24px, calc(17% - 92px));
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  background: #090806;
+}
 .realm-effects-canvas { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
 .realm-effects-canvas canvas { display: block; width: 100%; height: 100%; }
 .journey-layer { position: absolute; inset: 0; z-index: 1; overflow: hidden; visibility: hidden; will-change: opacity; }
@@ -278,7 +288,7 @@ body:has(.library-layer) .realm-rail { opacity: 0; visibility: hidden; pointer-e
 .hell-turntable-hotspot { left: 1.5%; top: 62%; width: 29.5%; height: 15.5%; }
 .hell-turntable-hotspot .hell-hotspot-aura { clip-path: polygon(0 19%, 78% 0, 100% 32%, 94% 92%, 13% 100%, 0 78%); }
 .hell-turntable-hotspot .hell-hotspot-aura { border-color: rgba(226,173,102,.62); box-shadow: 0 0 34px rgba(191,96,52,.22), inset 0 0 24px rgba(236,181,105,.08); }
-.journey-hell .now-playing { left: clamp(28px, 5.5vw, 104px); bottom: 10.5%; color: var(--ivory); }
+.journey-hell .now-playing { color: var(--ivory); }
 .now-playing-hell > svg { color: rgba(221,145,82,.78); }
 .now-playing-hell span { color: rgba(245,222,196,.6); }
 .now-playing-hell strong { color: rgba(250,237,219,.94); text-shadow: 0 2px 12px rgba(0,0,0,.78); }
@@ -337,8 +347,8 @@ body:has(.hell-panel-layer) .realm-rail { opacity: 0; visibility: hidden; pointe
 .record-selection-copy > div { display: grid; gap: 4px; }
 .record-selection-copy span { color: rgba(220,144,78,.84); font-size: 9px; letter-spacing: .2em; }
 .record-selection-copy strong { font-size: 10px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; }
-.record-selection-copy h3 { margin: 0; font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 2.5vw, 38px); font-weight: 500; line-height: .9; }
-.record-selection-copy p { margin: 0; color: rgba(242,234,220,.48); font-family: 'Cormorant Garamond', serif; font-size: 15px; font-style: italic; }
+.record-selection-copy h3 { margin: 0; font-family: var(--font-reading); font-size: clamp(24px, 2.5vw, 38px); font-weight: 500; line-height: .9; }
+.record-selection-copy p { margin: 0; color: rgba(242,234,220,.48); font-family: var(--font-reading); font-size: 15px; font-style: italic; }
 
 .hell-menu-panel { position: relative; z-index: 1; height: min(760px, calc(100svh - 34px)); aspect-ratio: 1.776; max-width: calc(100vw - 34px); transform-origin: 75% 55%; }
 .hell-menu-book { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; filter: sepia(.28) brightness(.78) saturate(.72) contrast(1.08); }
@@ -352,9 +362,9 @@ body:has(.hell-panel-layer) .realm-rail { opacity: 0; visibility: hidden; pointe
 .hell-menu-page article { align-self: center; padding-bottom: 8%; border-bottom: 1px solid rgba(79,43,23,.24); }
 .hell-menu-page article:last-of-type { border-bottom: 0; }
 .hell-menu-page article p { margin: 0 0 7px; font-size: clamp(7px, .62vw, 10px); letter-spacing: .15em; text-transform: uppercase; opacity: .64; }
-.hell-menu-page article h3 { margin: 0 0 7px; font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 2vw, 35px); font-weight: 600; line-height: .96; }
+.hell-menu-page article h3 { margin: 0 0 7px; font-family: var(--font-reading); font-size: clamp(22px, 2vw, 35px); font-weight: 600; line-height: .96; }
 .hell-menu-page article > span { display: block; font-size: clamp(7px, .62vw, 10px); letter-spacing: .1em; line-height: 1.45; text-transform: uppercase; opacity: .72; }
-.hell-menu-page article em { display: block; margin-top: 9px; font-family: 'Cormorant Garamond', serif; font-size: clamp(12px, 1.1vw, 17px); line-height: 1.15; opacity: .68; }
+.hell-menu-page article em { display: block; margin-top: 9px; font-family: var(--font-reading); font-size: clamp(12px, 1.1vw, 17px); line-height: 1.15; opacity: .68; }
 .hell-menu-navigation { position: absolute; z-index: 3; left: 50%; bottom: 5.8%; display: flex; align-items: center; gap: 18px; color: rgba(51,31,19,.76); transform: translateX(-50%); }
 .hell-menu-navigation button { display: grid; place-items: center; width: 34px; height: 30px; padding: 0; color: inherit; background: transparent; border: 0; transition: transform .3s var(--ease), opacity .3s ease; }
 .hell-menu-navigation button:first-child:hover:not(:disabled) { transform: translateX(-4px); }
@@ -405,11 +415,9 @@ body:has(.hell-panel-layer) .realm-rail { opacity: 0; visibility: hidden; pointe
   transition: opacity .45s ease, transform .6s var(--ease);
 }
 .credo-window:hover::after,
-.credo-window:focus-visible::after,
-.credo-window.is-active::after { opacity: 1; transform: scale(1); }
+.credo-window:focus-visible::after { opacity: 1; transform: scale(1); }
 .credo-window:hover,
-.credo-window:focus-visible,
-.credo-window.is-active { background: transparent; }
+.credo-window:focus-visible { background: transparent; }
 .credo-window > .credo-label {
   position: absolute;
   left: 50%;
@@ -427,16 +435,15 @@ body:has(.hell-panel-layer) .realm-rail { opacity: 0; visibility: hidden; pointe
   transition: opacity .38s ease, transform .5s var(--ease);
 }
 .credo-window:hover > .credo-label,
-.credo-window:focus-visible > .credo-label,
-.credo-window.is-active > .credo-label { opacity: 1; transform: translateY(0); }
+.credo-window:focus-visible > .credo-label { opacity: 1; transform: translateY(0); }
 .credo-aura {
   inset: 1px;
   clip-path: polygon(50% 0, 67% 4%, 84% 11%, 96% 20%, 100% 29%, 100% 100%, 0 100%, 0 29%, 4% 20%, 16% 11%, 33% 4%);
 }
-.credo-window-1 { left: 78.35%; top: 16.1%; width: 2.3%; height: 44.4%; }
-.credo-window-2 { left: 81.27%; top: 15.8%; width: 2.3%; height: 44.7%; }
-.credo-window-3 { left: 84.25%; top: 15.3%; width: 2.3%; height: 45.2%; }
-.credo-window-4 { left: 87.37%; top: 14.8%; width: 2.3%; height: 45.7%; }
+.credo-window-1 { left: 78.13%; top: 16.1%; width: 2.3%; height: 44.4%; }
+.credo-window-2 { left: 81.05%; top: 15.8%; width: 2.3%; height: 44.7%; }
+.credo-window-3 { left: 84.03%; top: 15.3%; width: 2.3%; height: 45.2%; }
+.credo-window-4 { left: 87.15%; top: 14.8%; width: 2.3%; height: 45.7%; }
 .heaven-light-field { position: absolute; inset: 0; z-index: 3; width: 100%; height: 100%; pointer-events: none; opacity: .92; mix-blend-mode: screen; }
 .credo-inscription {
   position: absolute;
@@ -515,7 +522,7 @@ body:has(.hell-panel-layer) .realm-rail { opacity: 0; visibility: hidden; pointe
 .credo-inscription p {
   margin: 0;
   max-width: 100%;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-reading);
   font-size: clamp(1.5rem, 2.45vw, 3rem);
   font-weight: 400;
   line-height: .98;
@@ -597,7 +604,7 @@ body:has(.hell-panel-layer) .realm-rail { opacity: 0; visibility: hidden; pointe
 .pilgrimage-tag-photo img { width: 100%; height: 100%; object-fit: cover; filter: sepia(.38) saturate(.62) contrast(1.08); }
 .archive-undeveloped { position: absolute; inset: 0; background: radial-gradient(circle at 64% 31%, rgba(178,135,72,.22), transparent 34%), linear-gradient(142deg, #18150f, #40301d 51%, #15120e); }
 .archive-undeveloped::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 15% 24%, rgba(255,235,194,.17) 0 1px, transparent 1.5px), radial-gradient(circle at 74% 67%, rgba(255,235,194,.12) 0 1px, transparent 1.5px); background-size: 27px 23px, 39px 33px; opacity: .55; }
-.pilgrimage-map-tag > strong { display: block; overflow: hidden; margin-top: 6px; font-family: 'Cormorant Garamond', serif; font-size: clamp(9px, .78vw, 12px); font-weight: 600; line-height: 1; text-align: left; text-overflow: ellipsis; white-space: nowrap; pointer-events: none; }
+.pilgrimage-map-tag > strong { display: block; overflow: hidden; margin-top: 6px; font-family: var(--font-reading); font-size: clamp(9px, .78vw, 12px); font-weight: 600; line-height: 1; text-align: left; text-overflow: ellipsis; white-space: nowrap; pointer-events: none; }
 body:has(.pilgrimage-layer.is-open) { overflow: hidden; }
 body:has(.pilgrimage-layer.is-open) .soul-nav,
 body:has(.pilgrimage-layer.is-open) .realm-rail,
@@ -613,7 +620,7 @@ body:has(.pilgrimage-layer.is-open) .cursor-signal { opacity: 0; visibility: hid
 .realm-copy h2 { margin: 24px 0; font-size: clamp(3.2rem, 6.6vw, 7.3rem); line-height: .9; letter-spacing: -.055em; font-weight: 500; max-width: 940px; }
 .realm-body { max-width: 650px; margin: 0; font-size: clamp(1rem, 1.25vw, 1.26rem); line-height: 1.7; }
 .track-kicker { display: flex; align-items: center; gap: 12px; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; }
-.track-title { margin: 17px 0 0; font-family: 'Cormorant Garamond', serif; font-size: 23px; font-style: italic; }
+.track-title { margin: 17px 0 0; font-family: var(--font-reading); font-size: 23px; font-style: italic; }
 .heaven-copy { position: absolute; left: clamp(32px, 8vw, 150px); top: 23%; color: #1d1710; }
 .heaven-copy .realm-body { color: rgba(29, 23, 16, .75); }
 .principle-list, .hell-notes { margin: 42px 0 0; padding: 0; list-style: none; border-top: 1px solid rgba(29, 23, 16, .3); max-width: 590px; }
@@ -628,7 +635,7 @@ body:has(.pilgrimage-layer.is-open) .cursor-signal { opacity: 0; visibility: hid
 .earth-copy { position: absolute; top: 22%; left: clamp(28px, 7vw, 132px); }
 .eyebrow { margin: 0 0 21px; font-size: 11px; letter-spacing: .34em; text-transform: uppercase; color: var(--paper); }
 .earth-copy h1 { max-width: 72rem; margin: 0; font-size: clamp(4.6rem, 10.7vw, 11.6rem); line-height: .78; letter-spacing: -.065em; font-weight: 600; white-space: nowrap; }
-.soul-script { margin: 34px 0 0; font-family: 'Cormorant Garamond', serif; font-size: clamp(1.55rem, 2.2vw, 2.45rem); font-style: italic; color: var(--paper); }
+.soul-script { margin: 34px 0 0; font-family: var(--font-reading); font-size: clamp(1.55rem, 2.2vw, 2.45rem); font-style: italic; color: var(--paper); }
 .hero-body { max-width: 630px; margin: 20px 0 0; color: rgba(242,234,220,.72); font-size: 15px; line-height: 1.7; }
 .hero-actions { display: flex; align-items: center; gap: 28px; margin-top: 34px; }
 .primary-action, .text-action { display: inline-flex; align-items: center; gap: 12px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; transition: transform .35s var(--ease), background .35s ease; }
@@ -636,12 +643,12 @@ body:has(.pilgrimage-layer.is-open) .cursor-signal { opacity: 0; visibility: hid
 .primary-action:hover { transform: translateY(-3px); background: white; }
 .text-action { color: var(--ivory); border-bottom: 1px solid rgba(242,234,220,.5); padding: 12px 0; }
 .text-action:hover { transform: translateX(4px); }
-.now-playing { position: absolute; z-index: 6; left: clamp(28px, 7vw, 132px); bottom: 42px; display: flex; gap: 13px; align-items: flex-start; pointer-events: none; }
+.now-playing { position: absolute; z-index: 6; left: var(--now-playing-left); bottom: var(--now-playing-bottom); display: flex; gap: 13px; align-items: flex-start; pointer-events: none; }
 .now-playing > svg { margin-top: 2px; opacity: .56; transition: opacity .4s ease; }
 .now-playing.is-playing > svg { opacity: .92; animation: record-spin 4.8s linear infinite; }
 .now-playing-copy { width: min(320px, 27vw); display: grid; gap: 3px; }
 .now-playing span, .earth-frequency { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: rgba(242,234,220,.56); }
-.now-playing strong { font-family: 'Cormorant Garamond', serif; font-size: 16px; line-height: 1.12; font-weight: 400; }
+.now-playing strong { font-family: var(--font-reading); font-size: 16px; line-height: 1.12; font-weight: 400; }
 .now-playing-grooves { display: block; width: 100%; height: 58px; margin-top: -1px; opacity: .58; transition: opacity .65s ease; }
 .now-playing.is-playing .now-playing-grooves { opacity: 1; }
 .now-playing-heaven {
@@ -664,9 +671,6 @@ body:has(.pilgrimage-layer.is-open) .cursor-signal { opacity: 0; visibility: hid
 @keyframes record-spin { to { transform: rotate(360deg); } }
 
 .journey-earth .soul-script { max-width: 470px; margin-top: 24px; font-size: clamp(1.35rem, 1.8vw, 2rem); line-height: 1.16; }
-.journey-heaven .now-playing,
-.journey-earth .now-playing { left: clamp(28px, 5.7vw, 108px); top: auto; bottom: 17%; }
-
 .bookshelf-hotspots,
 .earth-object-layer {
   --earth-map-width: max(100vw, calc(100svh * 1.7768));
@@ -716,7 +720,7 @@ body:has(.pilgrimage-layer.is-open) .cursor-signal { opacity: 0; visibility: hid
   align-items: center;
   justify-content: center;
   color: #d0ad69;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-reading);
   font-size: clamp(6px, .52vw, 9px);
   font-weight: 600;
   letter-spacing: .09em;
@@ -955,18 +959,18 @@ body:has(.pilgrimage-layer.is-open) .cursor-signal { opacity: 0; visibility: hid
 .object-panel-topline button { display: grid; place-items: center; width: 36px; height: 36px; color: var(--ivory); background: transparent; }
 .notebook-pages { padding: 28px 8px 0; }
 .notebook-pages p { margin: 0; }
-.notebook-pages h3 { margin: 14px 0 0; font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 4vw, 4.1rem); line-height: .9; letter-spacing: -.035em; font-weight: 400; }
+.notebook-pages h3 { margin: 14px 0 0; font-family: var(--font-reading); font-size: clamp(2.4rem, 4vw, 4.1rem); line-height: .9; letter-spacing: -.035em; font-weight: 400; }
 .notebook-pages { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; }
 .notebook-pages ul { margin: 4px 0 0; padding: 0; list-style: none; border-top: 1px solid rgba(242,234,220,.18); }
-.notebook-pages li { padding: 17px 0; display: grid; grid-template-columns: 32px 1fr; gap: 12px; border-bottom: 1px solid rgba(242,234,220,.16); color: rgba(242,234,220,.7); font-family: 'Cormorant Garamond', serif; font-size: 17px; line-height: 1.35; }
-.notebook-pages li span { color: var(--amber); font-family: 'Geist Variable', sans-serif; font-size: 8px; letter-spacing: .12em; }
+.notebook-pages li { padding: 17px 0; display: grid; grid-template-columns: 32px 1fr; gap: 12px; border-bottom: 1px solid rgba(242,234,220,.16); color: rgba(242,234,220,.7); font-family: var(--font-reading); font-size: 17px; line-height: 1.35; }
+.notebook-pages li span { color: var(--amber); font-family: var(--font-ui); font-size: 8px; letter-spacing: .12em; }
 
 .library-layer { position: fixed; inset: 0; z-index: 120; padding: 21px 24px; display: grid; place-items: center; overflow: hidden; perspective: 2200px; }
 .library-scrim { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; background: rgba(3,2,1,.72); backdrop-filter: blur(7px); }
 .library-folio {
   position: relative;
-  width: min(1540px, 100%, calc((100dvh - 42px) * 1.7806));
-  aspect-ratio: 1672 / 939;
+  width: min(1540px, 100%, calc((100dvh - 42px) * 1.72));
+  aspect-ratio: 1548 / 900;
   padding: 5.4% 7% 5.1%;
   display: flex;
   flex-direction: column;
@@ -998,38 +1002,40 @@ body:has(.pilgrimage-layer.is-open) .cursor-signal { opacity: 0; visibility: hid
 .folio-leaf-right { padding-left: clamp(38px, 4.6vw, 78px); }
 .folio-chapter-page { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
 .folio-chapter-page > span { font-size: clamp(7px, .58vw, 9px); letter-spacing: .22em; text-transform: uppercase; opacity: .48; }
-.folio-chapter-page h2 { max-width: 10ch; margin: 18px 0 24px; font-family: 'Cormorant Garamond', serif; font-size: clamp(2.7rem, 4.2vw, 5.2rem); line-height: .86; letter-spacing: -.04em; font-weight: 400; text-wrap: balance; }
+.folio-chapter-page h2 { max-width: 10ch; margin: 18px 0 24px; font-family: var(--font-reading); font-size: clamp(2.7rem, 4.2vw, 5.2rem); line-height: .86; letter-spacing: -.04em; font-weight: 400; text-wrap: balance; }
 .folio-chapter-page i { display: block; width: 32px; height: 1px; background: #1b1711; opacity: .54; }
 .folio-content-page { display: flex; flex-direction: column; justify-content: center; }
-.folio-markdown-flow { min-height: 0; max-height: 100%; overflow: hidden; padding: clamp(6px, 1vh, 14px) 8px 16px 0; color: rgba(27,23,17,.84); font-family: 'Cormorant Garamond', serif; }
+.folio-markdown-flow { min-height: 0; max-height: 100%; overflow: hidden; word-wrap: break-word; overflow-wrap: anywhere; padding: clamp(6px, 1vh, 14px) 8px 16px 0; color: rgba(27,23,17,.84); font-family: var(--font-reading); }
 .folio-markdown-flow > :first-child { margin-top: 0; }
 .folio-markdown-flow > :last-child { margin-bottom: 0; }
 .folio-markdown-flow p,
-.folio-markdown-flow li { font-size: clamp(13px, .9vw, 16px); line-height: 1.52; text-wrap: pretty; }
+.folio-markdown-flow li { font-size: clamp(15px, calc(1vw + 1px), 18px); line-height: 1.52; text-wrap: pretty; }
 .folio-markdown-flow p { margin: 0 0 .88em; }
 .folio-markdown-flow strong { font-weight: 600; color: #17120d; }
 .folio-markdown-flow em { color: rgba(27,23,17,.68); }
+.folio-markdown-flow h2,
 .folio-markdown-flow h3,
 .folio-markdown-flow h4,
 .folio-markdown-flow h5,
-.folio-markdown-flow h6 { margin: 1.05em 0 .4em; font-family: 'Cormorant Garamond', serif; line-height: 1.08; letter-spacing: -.015em; font-weight: 600; }
+.folio-markdown-flow h6 { margin: 1.05em 0 .4em; font-family: var(--font-reading); line-height: 1.08; letter-spacing: -.015em; font-weight: 600; }
+.folio-markdown-flow h2 { max-width: 18ch; font-size: clamp(1.55rem, 2.1vw, 2.45rem); line-height: .98; letter-spacing: -.025em; text-wrap: balance; }
 .folio-markdown-flow h3 { font-size: clamp(1.2rem, 1.5vw, 1.75rem); }
 .folio-markdown-flow h4 { font-size: clamp(1.05rem, 1.15vw, 1.35rem); }
 .folio-markdown-flow h5,
-.folio-markdown-flow h6 { font-family: 'Geist Variable', sans-serif; font-size: clamp(9px, .72vw, 11px); letter-spacing: .1em; text-transform: uppercase; }
+.folio-markdown-flow h6 { font-family: var(--font-ui); font-size: clamp(9px, .72vw, 11px); letter-spacing: .1em; text-transform: uppercase; }
 .folio-markdown-flow ul,
 .folio-markdown-flow ol { margin: .55em 0 .95em; padding-left: 1.3em; }
 .folio-markdown-flow li { margin: .12em 0; padding-left: .12em; }
 .folio-markdown-flow li::marker { color: rgba(27,23,17,.48); font-size: .8em; }
 .folio-markdown-flow blockquote { margin: 1em 0; padding: .08em 0 .08em .9em; border-left: 1px solid rgba(27,23,17,.4); color: rgba(27,23,17,.62); font-style: italic; }
 .folio-markdown-flow blockquote p { margin: 0; }
-.folio-markdown-flow code { padding: .08em .28em; background: rgba(27,23,17,.07); font-family: 'Geist Variable', monospace; font-size: .74em; }
+.folio-markdown-flow code { padding: .08em .28em; background: rgba(27,23,17,.07); font-family: var(--font-ui); font-size: .74em; }
 .folio-markdown-flow a { display: inline-flex; align-items: center; gap: 5px; color: #1b1711; border-bottom: 1px solid rgba(27,23,17,.4); text-decoration: none; }
 .folio-markdown-flow a svg { flex: 0 0 auto; transition: transform .3s var(--ease); }
 .folio-markdown-flow a:hover svg { transform: translate(2px, -2px); }
 .folio-markdown-flow figure { margin: 1em 0 1.15em; }
 .folio-markdown-flow figure img { display: block; width: 100%; max-height: clamp(150px, 23vh, 240px); object-fit: cover; filter: sepia(.08) saturate(.82) contrast(.94); }
-.folio-markdown-flow figcaption { margin-top: 7px; font-family: 'Geist Variable', sans-serif; font-size: 7px; line-height: 1.4; letter-spacing: .12em; text-transform: uppercase; opacity: .48; }
+.folio-markdown-flow figcaption { margin-top: 7px; font-family: var(--font-ui); font-size: 7px; line-height: 1.4; letter-spacing: .12em; text-transform: uppercase; opacity: .48; }
 .folio-pagination-measurer { position: absolute; inset: 0 50% 0 0; width: auto; height: 100%; visibility: hidden; pointer-events: none; z-index: -1; }
 .folio-pagination-viewport { position: relative; width: 100%; flex: 1; overflow: hidden; }
 .folio-pagination-probe { width: 100%; }
@@ -1055,7 +1061,7 @@ body:has(.pilgrimage-layer.is-open) .cursor-signal { opacity: 0; visibility: hid
 .work-ledger { display: grid; grid-template-columns: 290px 1fr; gap: 64px; align-items: start; }
 .work-heading { align-self: start; }
 .work-heading > p { color: var(--amber); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; }
-.work-heading h3 { margin: 24px 0 36px; font-family: 'Cormorant Garamond', serif; font-size: 52px; line-height: .92; font-weight: 400; }
+.work-heading h3 { margin: 24px 0 36px; font-family: var(--font-reading); font-size: 52px; line-height: .92; font-weight: 400; }
 .work-heading span { font-size: 10px; color: rgba(242,234,220,.42); letter-spacing: .14em; text-transform: uppercase; }
 .work-grid { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-flow: dense; gap: 1px; background: rgba(242,234,220,.2); border: 1px solid rgba(242,234,220,.2); }
 .work-card { min-height: 360px; padding: 30px; display: flex; flex-direction: column; color: var(--ivory); text-decoration: none; background: #17130f; overflow: hidden; transition: background .6s var(--ease), transform .7s var(--ease); }
@@ -1065,13 +1071,13 @@ body:has(.pilgrimage-layer.is-open) .cursor-signal { opacity: 0; visibility: hid
 .work-card-3, .work-card-4, .work-card-5 { grid-column: span 4; }
 .work-card-top, .work-card-bottom { display: flex; align-items: center; justify-content: space-between; gap: 18px; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: rgba(242,234,220,.45); }
 .work-card h4 { max-width: 780px; margin: 62px 0 24px; font-size: clamp(1.5rem, 2.3vw, 2.9rem); line-height: 1.02; letter-spacing: -.035em; font-weight: 500; }
-.work-card p { max-width: 680px; margin: 0; color: rgba(242,234,220,.53); font-family: 'Cormorant Garamond', serif; font-size: 17px; line-height: 1.55; }
+.work-card p { max-width: 680px; margin: 0; color: rgba(242,234,220,.53); font-family: var(--font-reading); font-size: 17px; line-height: 1.55; }
 .work-card-bottom { margin-top: auto; padding-top: 38px; justify-content: flex-start; }
 .work-card-bottom span:nth-child(2) { margin-left: auto; color: var(--amber); }
 
 .archive-section { min-height: 115vh; padding: 180px 0; background: #d8cdb8; color: #16120e; }
 .archive-intro { display: grid; grid-template-columns: 1.8fr 1fr; gap: 80px; align-items: end; margin-bottom: 90px; }
-.archive-intro h2 { max-width: 750px; margin: 20px 0 0; font-family: 'Cormorant Garamond', serif; font-size: clamp(4rem, 8vw, 8rem); line-height: .82; font-weight: 400; letter-spacing: -.05em; }
+.archive-intro h2 { max-width: 750px; margin: 20px 0 0; font-family: var(--font-reading); font-size: clamp(4rem, 8vw, 8rem); line-height: .82; font-weight: 400; letter-spacing: -.05em; }
 .archive-intro > p { max-width: 440px; margin: 0; line-height: 1.7; color: rgba(22,18,14,.65); }
 .archive-panels { display: flex; min-height: 570px; border: 1px solid rgba(22,18,14,.26); overflow: hidden; }
 .archive-panel { display: grid; grid-template-columns: 74px 0fr; min-width: 74px; background: #cabda4; border-right: 1px solid rgba(22,18,14,.25); transition: grid-template-columns .8s var(--ease), background .6s ease; overflow: hidden; }
@@ -1095,7 +1101,7 @@ body:has(.pilgrimage-layer.is-open) .cursor-signal { opacity: 0; visibility: hid
 .hell-notes li::after { content: '33⅓'; color: var(--amber); font-size: 10px; }
 .contact-card { position: absolute; z-index: 6; width: min(620px, calc(100% - 64px)); right: clamp(42px, 8vw, 145px); bottom: 180px; padding: 45px; background: rgba(16,7,5,.86); border: 1px solid rgba(242,234,220,.22); backdrop-filter: blur(16px); }
 .contact-card > p { margin: 0; color: var(--amber); font-size: 9px; letter-spacing: .22em; }
-.contact-card h3 { margin: 20px 0; font-family: 'Cormorant Garamond', serif; font-size: clamp(2.7rem, 5vw, 5rem); line-height: .88; font-weight: 400; }
+.contact-card h3 { margin: 20px 0; font-family: var(--font-reading); font-size: clamp(2.7rem, 5vw, 5rem); line-height: .88; font-weight: 400; }
 .contact-card > span { display: block; max-width: 430px; color: rgba(242,234,220,.58); line-height: 1.65; }
 .contact-card > a { margin-top: 38px; padding-bottom: 12px; display: flex; justify-content: space-between; align-items: center; color: var(--ivory); text-decoration: none; font-size: clamp(1rem, 2vw, 1.45rem); border-bottom: 1px solid rgba(242,234,220,.4); }
 .social-row { display: flex; gap: 10px; margin-top: 28px; }
@@ -1114,6 +1120,7 @@ body:has(.pilgrimage-layer.is-open) .cursor-signal { opacity: 0; visibility: hid
 
 @media (max-width: 820px) {
   :root { --shell: calc(100% - 36px); }
+  .realm-stage { --now-playing-left: 18px; --now-playing-bottom: max(24px, calc(20% - 92px)); }
   .library-layer { padding: 10px; }
   .soul-nav { height: 66px; padding: 0 18px; grid-template-columns: 1fr auto; mix-blend-mode: normal; }
   .realm-rail { display: none; }
@@ -1146,7 +1153,6 @@ body:has(.pilgrimage-layer.is-open) .cursor-signal { opacity: 0; visibility: hid
   .hell-menu-hotspot .hell-hotspot-label { left: 50%; top: auto; bottom: 50%; opacity: .9; translate: -50% 50%; transform: none; }
   .hell-record-wall-hotspot .hell-hotspot-label { opacity: .8; transform: translateY(0); }
   .hell-turntable-hotspot { left: 1.5%; top: 62%; width: 29.5%; height: 15.5%; }
-  .journey-hell .now-playing { left: 18px; bottom: 10.5%; }
   .now-playing-hell .now-playing-copy { width: min(248px, 72vw); }
   .now-playing-hell strong { font-size: 15px; }
   .hell-panel-layer { padding: 8px; }
@@ -1177,7 +1183,6 @@ body:has(.pilgrimage-layer.is-open) .cursor-signal { opacity: 0; visibility: hid
   .hero-body { max-width: calc(100% - 20px); font-size: 14px; }
   .hero-actions { align-items: flex-start; gap: 18px; }
   .journey-earth .now-playing { display: none; }
-  .journey-heaven .now-playing { left: 18px; top: auto; bottom: 20%; }
   .now-playing-heaven .now-playing-copy { width: min(246px, 70vw); }
   .now-playing-heaven strong { font-size: clamp(15px, 4.5vw, 18px); }
   .earth-frequency { display: none; }
@@ -1258,7 +1263,7 @@ body:has(.pilgrimage-layer.is-open) .cursor-signal { opacity: 0; visibility: hid
   .folio-chapter-page h2 { font-size: clamp(2.7rem, 14vw, 4.2rem); }
   .folio-markdown-flow { overflow: hidden; padding: 8px 2px; }
   .folio-markdown-flow p,
-  .folio-markdown-flow li { font-size: 14px; line-height: 1.52; }
+  .folio-markdown-flow li { font-size: 15px; line-height: 1.52; }
   .folio-pagination-measurer { inset: 0; width: 100%; height: 100%; padding: 26px 8px 24px; }
   .folio-navigation { flex: 0 0 auto; margin: 0; padding: 14px 10px 4px; background: rgba(231,210,175,.72); }
 

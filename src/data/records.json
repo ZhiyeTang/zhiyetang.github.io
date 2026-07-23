@@ -1,57 +1,90 @@
 [
   {
+    "id": "bad",
+    "artist": "Michael Jackson",
+    "title": "Bad",
+    "year": "1987",
+    "image": "/images/hell-records/bad.webp",
+    "note": {
+      "en": "Jackson turns total artistic control into pop that struts, confronts, and still asks the man in the mirror to change.",
+      "zh": "杰克逊把全面的创作掌控化成昂首向前的流行乐，在对抗世界时仍追问镜中人该如何改变。"
+    }
+  },
+  {
     "id": "black-messiah",
     "artist": "D’Angelo and The Vanguard",
     "title": "Black Messiah",
     "year": "2014",
     "image": "/images/hell-records/black-messiah.webp",
     "note": {
-      "en": "The record behind tonight’s needle drop.",
-      "zh": "今晚唱针落下的那张唱片。"
+      "en": "A dense analog prayer for collective resistance, where private desire and public struggle move to the same pulse.",
+      "zh": "一篇献给集体抗争的浓稠模拟录音祷文，让私人欲望与公共斗争共享同一脉搏。"
     }
   },
   {
-    "id": "promise",
-    "artist": "Sade",
-    "title": "Promise",
-    "year": "1985",
-    "image": "/images/hell-records/promise.webp",
+    "id": "brown-sugar",
+    "artist": "D'Angelo",
+    "title": "Brown Sugar",
+    "year": "1995",
+    "image": "/images/hell-records/brown-sugar.webp",
     "note": {
-      "en": "Quiet confidence, satin-dark and precise.",
-      "zh": "安静、自持，像深色缎面一样精确。"
+      "en": "Gospel warmth, hip-hop swing, and unhurried sensuality redraw the vocabulary of modern soul.",
+      "zh": "福音乐的温度、嘻哈的摇摆与从容的感官气息，共同重写了现代灵魂乐的语汇。"
     }
   },
   {
-    "id": "one-in-a-million",
-    "artist": "Aaliyah",
-    "title": "One in a Million",
-    "year": "1996",
-    "image": "/images/hell-records/one-in-a-million.webp",
+    "id": "heal-me-good",
+    "artist": "Yufu",
+    "title": "Heal Me Good",
+    "year": "2025",
+    "image": "/images/hell-records/heal-me-good.webp",
     "note": {
-      "en": "Future-facing rhythm with a featherlight touch.",
-      "zh": "轻盈触感之下，是面向未来的节奏。"
+      "en": "Yufu rebuilds himself through 1970s soul and funk, letting warm grooves carry a hard-won return to music.",
+      "zh": "Yufu 借七十年代灵魂与放克重建自己，让温暖律动承载一次来之不易的音乐归途。"
     }
   },
   {
-    "id": "miseducation",
-    "artist": "Lauryn Hill",
-    "title": "The Miseducation of Lauryn Hill",
-    "year": "1998",
-    "image": "/images/hell-records/miseducation.webp",
+    "id": "im-ok",
+    "artist": "陶喆",
+    "title": "I'm OK",
+    "year": "1999",
+    "image": "/images/hell-records/im-ok.webp",
     "note": {
-      "en": "Soul, memory, and truth without polish.",
-      "zh": "灵魂、记忆和未经修饰的真实。"
+      "en": "Rock urgency and R&B finesse frame a turn-of-the-century search for honesty amid the noise of modern life.",
+      "zh": "摇滚的冲劲与 R&B 的细腻包住世纪末的城市焦虑，追问人在喧嚣中能否诚实地找到自己。"
     }
   },
   {
-    "id": "donuts",
-    "artist": "J Dilla",
-    "title": "Donuts",
-    "year": "2006",
-    "image": "/images/hell-records/donuts.webp",
+    "id": "never-enough",
+    "artist": "Daniel Caesar",
+    "title": "Never Enough",
+    "year": "2023",
+    "image": "/images/hell-records/never-enough.webp",
     "note": {
-      "en": "A whole language built from fragments.",
-      "zh": "用碎片搭建出的一整套语言。"
+      "en": "Caesar measures the price of vulnerability while caught between the need for truth, intimacy, and approval.",
+      "zh": "Caesar 在真相、亲密与被认可的渴望之间徘徊，衡量袒露自我究竟要付出多少代价。"
+    }
+  },
+  {
+    "id": "purple-rain",
+    "artist": "Prince",
+    "title": "Purple Rain",
+    "year": "1984",
+    "image": "/images/hell-records/purple-rain.webp",
+    "note": {
+      "en": "Prince turns romantic turmoil and self-invention into maximal rock-soul theater built for stage and screen.",
+      "zh": "Prince 把情感风暴与自我塑造推向极致，写成一场同时属于舞台与银幕的摇滚灵魂剧。"
+    }
+  },
+  {
+    "id": "son-of-spergy",
+    "artist": "Daniel Caesar",
+    "title": "Son Of Spergy",
+    "year": "2025",
+    "image": "/images/hell-records/son-of-spergy.webp",
+    "note": {
+      "en": "Caesar returns to faith, family, and his father’s shadow to ask what inheritance remains when belief grows complicated.",
+      "zh": "Caesar 回到信仰、家庭与父亲的影子里，追问当信念变得复杂，我们究竟继承了什么。"
     }
   },
   {
@@ -61,8 +94,41 @@
     "year": "1976",
     "image": "/images/hell-records/songs-in-the-key-of-life.webp",
     "note": {
-      "en": "Generous, restless, and endlessly alive.",
-      "zh": "丰盛、不安分，而且永远鲜活。"
+      "en": "Wonder maps love, injustice, childhood, and faith with a generosity too expansive for any single genre.",
+      "zh": "Wonder 以超越单一类型的丰盛笔触，描绘爱情、不公、童年与信仰共同组成的人生全景。"
+    }
+  },
+  {
+    "id": "miseducation",
+    "artist": "Lauryn Hill",
+    "title": "The Miseducation of Lauryn Hill",
+    "year": "1998",
+    "image": "/images/hell-records/miseducation.webp",
+    "note": {
+      "en": "Hill turns heartbreak, motherhood, faith, and self-knowledge into the life lessons no classroom could teach.",
+      "zh": "Hill 把心碎、母职、信仰与自我认识写成一堂任何教室都无法教授的人生课。"
+    }
+  },
+  {
+    "id": "whats-going-on",
+    "artist": "Marvin Gaye",
+    "title": "What's Going On",
+    "year": "1971",
+    "image": "/images/hell-records/whats-going-on.webp",
+    "note": {
+      "en": "Gaye answers war, poverty, and racial fracture with a seamless prayer for empathy instead of escalation.",
+      "zh": "Gaye 面对战争、贫困与种族撕裂，不以怒吼升级冲突，而以连绵的灵魂乐为共情祈祷。"
+    }
+  },
+  {
+    "id": "ai-ai-ai",
+    "artist": "方大同",
+    "title": "爱爱爱",
+    "year": "2006",
+    "image": "/images/hell-records/ai-ai-ai.webp",
+    "note": {
+      "en": "Khalil Fong uses soul, jazz, and R&B to unfold love in its many forms without smoothing away its complications.",
+      "zh": "方大同以灵魂、爵士与 R&B 展开爱的不同面貌，同时保留每段关系里难以磨平的复杂余温。"
     }
   }
 ]

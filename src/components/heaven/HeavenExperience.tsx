@@ -75,7 +75,7 @@ export default function HeavenExperience({ language, isActive, trackTitle }: Pro
               key={entry.id}
               type="button"
               data-credo-window={entry.id}
-              className={`realm-hotspot credo-window credo-window-${index + 1} ${activeCredo === index ? 'is-active' : ''}`}
+              className={`realm-hotspot credo-window credo-window-${index + 1}`}
               onPointerEnter={() => setHoveredCredo(index)}
               onPointerLeave={() => setHoveredCredo(null)}
               onFocus={() => setHoveredCredo(index)}

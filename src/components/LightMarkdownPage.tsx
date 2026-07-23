@@ -51,7 +51,7 @@ export function MarkdownBlockView({
     const List = block.ordered ? 'ol' : 'ul'
     return <List>{block.items.map((item, index) => <li key={`${item}-${index}`}>{renderInline(item)}</li>)}</List>
   }
-  const Heading = `h${block.level}` as 'h3' | 'h4' | 'h5' | 'h6'
+  const Heading = `h${block.level}` as 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   return <Heading>{renderInline(block.content)}</Heading>
 }
 

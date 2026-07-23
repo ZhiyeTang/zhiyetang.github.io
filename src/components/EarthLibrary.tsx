@@ -72,7 +72,7 @@ export default function EarthLibrary({ language, isActive }: Props) {
     : leftPage && leftPage.kind !== 'blank'
       ? leftPage.chapter
       : labels[language][activeBook ?? 'resume']
-  const visibleArticleTitle = rightPage?.kind === 'content'
+  const visibleSecondaryTitle = rightPage?.kind === 'content'
     ? rightPage.title
     : leftPage?.kind === 'content'
       ? leftPage.title
@@ -330,11 +330,11 @@ export default function EarthLibrary({ language, isActive }: Props) {
         <div className="library-layer" role="dialog" aria-modal="true" aria-labelledby="folio-title">
           <button className="library-scrim" onClick={closeBook} aria-label={language === 'zh' ? '关闭书本' : 'Close book'} />
           <div ref={folio} className="library-folio">
-            <img className="folio-book-surface" src="/images/library/open-book-spread-v1.webp" alt="" aria-hidden="true" />
+            <img className="folio-book-surface" src="/images/library/open-book-spread-v2.webp" alt="" aria-hidden="true" />
             <div className="folio-topline">
               <span id="folio-title">{visibleChapter} · {String(page + 1).padStart(2, '0')} / {String(spreadCount).padStart(2, '0')}</span>
               <div className="folio-topline-actions">
-                {visibleArticleTitle && <strong aria-live="polite">{visibleArticleTitle}</strong>}
+                {visibleSecondaryTitle && <strong aria-live="polite">{visibleSecondaryTitle}</strong>}
                 <button ref={closeButton} onClick={closeBook} aria-label={language === 'zh' ? '关闭' : 'Close'}><X size={22} weight="light" /></button>
               </div>
             </div>
