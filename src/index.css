@@ -343,12 +343,13 @@ body:has(.hell-panel-layer) .realm-rail { opacity: 0; visibility: hidden; pointe
 .record-cabinet-navigation button:focus-visible { outline: 1px solid rgba(236,177,106,.72); outline-offset: 2px; }
 .record-cabinet-navigation button:disabled { opacity: .22; cursor: default; }
 .record-cabinet-navigation span { min-width: 48px; font-size: 8px; letter-spacing: .18em; text-align: center; }
-.record-selection-copy { display: grid; grid-template-columns: minmax(190px, .78fr) 1.5fr; gap: 30px; align-items: end; min-height: 74px; padding-top: 13px; color: var(--ivory); border-top: 1px solid rgba(242,234,220,.16); }
-.record-selection-copy > div { display: grid; gap: 4px; }
+.record-selection-copy { display: grid; grid-template-columns: 1fr; gap: 8px; align-items: center; justify-items: center; min-height: 74px; padding-top: 13px; color: var(--ivory); text-align: center; border-top: 1px solid rgba(242,234,220,.16); }
+.record-selection-copy > div { display: grid; justify-items: center; gap: 4px; }
+.record-selection-copy > div:first-child { display: flex; align-items: center; justify-content: center; gap: 12px; }
 .record-selection-copy span { color: rgba(220,144,78,.84); font-size: 9px; letter-spacing: .2em; }
 .record-selection-copy strong { font-size: 10px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; }
 .record-selection-copy h3 { margin: 0; font-family: var(--font-reading); font-size: clamp(24px, 2.5vw, 38px); font-weight: 500; line-height: .9; }
-.record-selection-copy p { margin: 0; color: rgba(242,234,220,.48); font-family: var(--font-reading); font-size: 15px; font-style: italic; }
+.record-selection-copy p { max-width: 720px; margin: 0; color: rgba(242,234,220,.48); font-family: var(--font-reading); font-size: 15px; font-style: italic; line-height: 1.35; }
 
 .hell-menu-panel { position: relative; z-index: 1; height: min(760px, calc(100svh - 34px)); aspect-ratio: 1.776; max-width: calc(100vw - 34px); transform-origin: 75% 55%; }
 .hell-menu-book { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; filter: sepia(.28) brightness(.78) saturate(.72) contrast(1.08); }
