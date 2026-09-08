@@ -1,5 +1,4 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Church, Martini, VinylRecord, Waveform } from '@phosphor-icons/react'
 import { useLanguage } from './i18n'
 import RealmJourney from './components/RealmJourney'
@@ -88,32 +87,9 @@ export default function SoulPortfolio() {
     document.title = language === 'zh' ? '唐致烨 · 灵魂频率' : 'Zhiye Tang · Soul Frequency'
   }, [language])
 
-  useEffect(() => {
-    const imageReady = Array.from(document.images).map((image) => (
-      image.complete
-        ? Promise.resolve()
-        : new Promise<void>((resolve) => {
-            image.addEventListener('load', () => resolve(), { once: true })
-            image.addEventListener('error', () => resolve(), { once: true })
-          })
-    ))
-    Promise.all([document.fonts.ready, ...imageReady]).then(() => {
-      ScrollTrigger.refresh()
-      if (!window.location.hash) {
-        const earth = document.getElementById('earth')
-        if (earth) requestAnimationFrame(() => {
-          const previousBehavior = document.documentElement.style.scrollBehavior
-          document.documentElement.style.scrollBehavior = 'auto'
-          window.scrollTo({ top: earth.offsetTop, behavior: 'auto' })
-          document.documentElement.style.scrollBehavior = previousBehavior
-        })
-      }
-    })
-  }, [])
-
   const scrollTo = (id: Realm) => {
     setMenuOpen(false)
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    document.getElementById(id)?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' })
   }
 
   return (

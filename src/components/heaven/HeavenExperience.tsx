@@ -3,7 +3,6 @@ import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { credo, type HeavenLanguage } from '../../data/heaven'
 import SoulPlayer from '../SoulPlayer'
-import HeavenLightField from './HeavenLightField'
 import PilgrimageArchive from './PilgrimageArchive'
 
 gsap.registerPlugin(useGSAP)
@@ -19,7 +18,6 @@ export default function HeavenExperience({ language, isActive, trackTitle }: Pro
   const credoInscriptionRef = useRef<HTMLDivElement>(null)
   const [mapTarget, setMapTarget] = useState<HTMLElement | null>(null)
   const [activeCredo, setActiveCredo] = useState<number | null>(null)
-  const [hoveredCredo, setHoveredCredo] = useState<number | null>(null)
   const [pilgrimageOpen, setPilgrimageOpen] = useState(false)
   const [isPlaying, setIsPlaying] = useState(false)
   const [playbackToggle, setPlaybackToggle] = useState(0)
@@ -28,7 +26,6 @@ export default function HeavenExperience({ language, isActive, trackTitle }: Pro
   useEffect(() => {
     if (!isActive) {
       setActiveCredo(null)
-      setHoveredCredo(null)
       setPilgrimageOpen(false)
     }
   }, [isActive])
@@ -76,10 +73,6 @@ export default function HeavenExperience({ language, isActive, trackTitle }: Pro
               type="button"
               data-credo-window={entry.id}
               className={`realm-hotspot credo-window credo-window-${index + 1}`}
-              onPointerEnter={() => setHoveredCredo(index)}
-              onPointerLeave={() => setHoveredCredo(null)}
-              onFocus={() => setHoveredCredo(index)}
-              onBlur={() => setHoveredCredo(null)}
               onClick={() => openCredo(index)}
               aria-expanded={activeCredo === index}
               aria-label={`${entry.label[language]}: ${entry.text[language]}`}
@@ -91,7 +84,6 @@ export default function HeavenExperience({ language, isActive, trackTitle }: Pro
         </div>
       </div>
 
-      <HeavenLightField isActive={isActive} hoveredCredo={hoveredCredo} activeCredo={activeCredo} />
 
       <SoulPlayer
         language={language}
