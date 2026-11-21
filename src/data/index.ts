@@ -178,19 +178,6 @@ export const experience: Experience[] = [
     },
     logo: '/logos/vivo-logo.png',
   },
-  {
-    company: {
-      en: 'Shenzhen University',
-      zh: '深圳大学',
-    },
-    role: { en: 'Postgraduate Research Student, Research Institute for Future Media Computing (FMC)', zh: '未来媒体计算研究所（FMC） 硕士研究生' },
-    period: '2022.09 - 2025.07',
-    description: {
-      en: '',
-      zh: '',
-    },
-    logo: '/logos/szu-logo.png',
-  },
 ];
 
 export const education: Education[] = [
