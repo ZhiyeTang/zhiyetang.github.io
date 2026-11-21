@@ -1,4 +1,4 @@
-import { createContext, useState, useContext, ReactNode } from 'react'
+import { createContext, useState, useContext, type ReactNode } from 'react'
 
 export type Language = 'en' | 'zh'
 
@@ -9,7 +9,7 @@ interface LanguageContextType {
   setLanguage: (lang: Language) => void
 }
 
-export const LanguageContext = createContext<LanguageContextType>({
+const LanguageContext = createContext<LanguageContextType>({
   language: 'en',
   setLanguage: () => {},
 })

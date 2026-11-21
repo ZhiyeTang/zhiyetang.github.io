@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import { CaretDown, Pause, Play, SpeakerHigh, SpeakerSlash } from '@phosphor-icons/react'
 import { contact, education, experience, personalInfo } from '../data'
-import { recordSelections } from '../data/hell'
-import { books, type BookKey, type Language, type MarkdownBlock } from '../lib/books'
+import recordSelections from '../data/records.json'
+import type { Language } from '../i18n/LanguageContext'
+import { books, type BookKey, type MarkdownBlock } from '../lib/books'
 import { paintVgaImage } from '../lib/ledDisplay'
-import { MarkdownBlockView } from './LightMarkdownPage'
+import { MarkdownBlockView } from './MarkdownBlockView'
 
 export const sections = ['intro', 'experience', 'research', 'life', 'essays', 'contact'] as const
 export type PortfolioSection = typeof sections[number]
@@ -90,13 +91,11 @@ export function PortfolioIntro({ language }: { language: Language }) {
 }
 
 function Blocks({ blocks }: { blocks: MarkdownBlock[] }) {
-  return blocks.filter(block => block.type !== 'pageBreak').map((block, i) =>
-    <MarkdownBlockView key={i} block={block} eagerImages />,
-  )
+  return blocks.map((block, i) => <MarkdownBlockView key={i} block={block} />)
 }
 
 function Reading({ book, language }: { book: BookKey; language: Language }) {
-  const pages = books[language][book].filter(page => page.kind === 'content')
+  const pages = books[language][book]
   return pages.map((page, index) => index % 2 === 0 && (
     <div className="portfolio-pair" key={page.title}>
       {pages.slice(index, index + 2).map(entry => (
@@ -225,7 +224,7 @@ export default function PortfolioContent({ section, language, recordIndex, onRec
 
   switch (section) {
     case 'intro': {
-      const research = books[language].research.filter(page => page.kind === 'content').slice(0, 3)
+      const research = books[language].research.slice(0, 3)
 
       return <div className="portfolio-overview">
         <div className="portfolio-highlights">
@@ -249,8 +248,7 @@ export default function PortfolioContent({ section, language, recordIndex, onRec
               <dd>
                 <h3>{entry.company[language]}</h3>
                 <p>{entry.role[language]}</p>
-                {entry.description[language] && <p>{entry.description[language]}</p>}
-                {index === 0 && books[language].work.map((page, i) => page.kind === 'content' && (
+                {index === 0 && books[language].work.map((page, i) => (
                   <Blocks key={i} blocks={page.blocks.filter(block => block.type === 'paragraph' && !block.content.startsWith('*'))} />
                 ))}
               </dd>

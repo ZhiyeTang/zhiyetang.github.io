@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type 
 import { useGSAP } from '@gsap/react'
 import { ArrowCounterClockwise, ArrowRight, EnvelopeSimple, Gear, NoteBlank } from '@phosphor-icons/react'
 import { gsap } from 'gsap'
-import { useLanguageContext } from './i18n'
+import { useLanguageContext } from './i18n/LanguageContext'
 import PortfolioContent, { LedImage, PortfolioIntro, sections, type PortfolioSection } from './components/PortfolioContent'
 import { vgaColors, vgaTrack, type LedSettings } from './lib/ledDisplay'
 

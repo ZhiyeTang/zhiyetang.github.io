@@ -1,5 +1,7 @@
-export type Language = 'en' | 'zh'
-export type BookKey = 'resume' | 'work' | 'education' | 'research' | 'patents' | 'notes' | 'selections'
+import type { Language } from '../i18n/LanguageContext'
+
+const bookKeys = ['work', 'research', 'patents'] as const
+export type BookKey = typeof bookKeys[number]
 
 export type MarkdownBlock =
   | { type: 'paragraph'; content: string }
@@ -7,15 +9,10 @@ export type MarkdownBlock =
   | { type: 'list'; ordered: boolean; items: string[] }
   | { type: 'image'; src: string; alt: string; caption?: string }
   | { type: 'blockquote'; content: string }
-  | { type: 'pageBreak' }
 
-export type MarkdownBookPage =
-  | { kind: 'blank' }
-  | { kind: 'chapter'; chapter: string }
-  | { kind: 'content'; chapter: string; title: string; blocks: MarkdownBlock[] }
+type BookEntry = { title: string; blocks: MarkdownBlock[] }
 
-const bookKeys: BookKey[] = ['resume', 'work', 'education', 'research', 'patents', 'notes', 'selections']
-const markdownFiles = import.meta.glob('../../books/**/*.md', {
+const markdownFiles = import.meta.glob('../../books/{en,zh}/{work,research,patents}.md', {
   eager: true,
   import: 'default',
   query: '?raw',
@@ -54,14 +51,8 @@ function parseBlocks(lines: string[]): MarkdownBlock[] {
 
   lines.forEach((rawLine) => {
     const line = rawLine.trimEnd()
-    if (!line.trim()) {
+    if (!line.trim() || line.trim() === '---') {
       flushAll()
-      return
-    }
-
-    if (line.trim() === '---') {
-      flushAll()
-      blocks.push({ type: 'pageBreak' })
       return
     }
 
@@ -112,20 +103,17 @@ function parseBlocks(lines: string[]): MarkdownBlock[] {
   return blocks
 }
 
-function parseBook(source: string, filePath: string): MarkdownBookPage[] {
-  const pages: MarkdownBookPage[] = []
+function parseBook(source: string, filePath: string): BookEntry[] {
+  const entries: BookEntry[] = []
   let chapter = ''
   let title = ''
   let body: string[] = []
 
-  const flushTitlePage = () => {
+  const flushEntry = () => {
     if (!title && !body.some((line) => line.trim())) return
     if (!chapter) throw new Error(`Content must follow a level-one chapter heading in ${filePath}`)
-    const contentTitle = title || chapter
-    pages.push({
-      kind: 'content',
-      chapter,
-      title: contentTitle,
+    entries.push({
+      title: title || chapter,
       blocks: [
         ...(title ? [{ type: 'heading' as const, level: 2 as const, content: title }] : []),
         ...parseBlocks(body),
@@ -138,14 +126,12 @@ function parseBook(source: string, filePath: string): MarkdownBookPage[] {
   source.trim().split('\n').forEach((line) => {
     const heading = line.match(headingPattern)
     if (heading?.[1].length === 1) {
-      flushTitlePage()
+      flushEntry()
       chapter = heading[2].trim()
-      if (pages.length % 2 === 0) pages.push({ kind: 'blank' })
-      pages.push({ kind: 'chapter', chapter })
       return
     }
     if (heading?.[1].length === 2) {
-      flushTitlePage()
+      flushEntry()
       if (!chapter) throw new Error(`Title must follow a chapter heading in ${filePath}`)
       title = heading[2].trim()
       return
@@ -153,18 +139,18 @@ function parseBook(source: string, filePath: string): MarkdownBookPage[] {
     body.push(line)
   })
 
-  flushTitlePage()
-  if (!pages.some((page) => page.kind === 'chapter')) throw new Error(`Missing level-one chapter heading in ${filePath}`)
-  return pages
+  flushEntry()
+  if (!chapter) throw new Error(`Missing level-one chapter heading in ${filePath}`)
+  return entries
 }
 
-export const books = (['en', 'zh'] as const).reduce<Record<Language, Record<BookKey, MarkdownBookPage[]>>>((languages, language) => {
-  languages[language] = bookKeys.reduce<Record<BookKey, MarkdownBookPage[]>>((library, book) => {
-    const suffix = `/books/${language}/${book}.md`
-    const entry = Object.entries(markdownFiles).find(([path]) => path.endsWith(suffix))
-    if (!entry) throw new Error(`Missing Markdown book: ${suffix}`)
-    library[book] = parseBook(entry[1], entry[0])
+export const books = (['en', 'zh'] as const).reduce<Record<Language, Record<BookKey, BookEntry[]>>>((languages, language) => {
+  languages[language] = bookKeys.reduce<Record<BookKey, BookEntry[]>>((library, book) => {
+    const path = `../../books/${language}/${book}.md`
+    const source = markdownFiles[path]
+    if (source === undefined) throw new Error(`Missing Markdown book: ${path}`)
+    library[book] = parseBook(source, path)
     return library
-  }, {} as Record<BookKey, MarkdownBookPage[]>)
+  }, {} as Record<BookKey, BookEntry[]>)
   return languages
-}, {} as Record<Language, Record<BookKey, MarkdownBookPage[]>>)
+}, {} as Record<Language, Record<BookKey, BookEntry[]>>)

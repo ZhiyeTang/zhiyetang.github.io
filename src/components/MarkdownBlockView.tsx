@@ -1,6 +1,6 @@
 import { Fragment, type ReactNode } from 'react'
 import { ArrowUpRight } from '@phosphor-icons/react'
-import type { MarkdownBlock, MarkdownBookPage } from '../lib/books'
+import type { MarkdownBlock } from '../lib/books'
 
 const inlinePattern = /(\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*|__[^_]+__|`[^`]+`|\*[^*]+\*|_[^_]+_)/g
 const linkPattern = /^\[([^\]]+)\]\((\S+?)(?:\s+["'][^"']+["'])?\)$/
@@ -27,22 +27,13 @@ function renderInline(source: string): ReactNode[] {
   })
 }
 
-export function MarkdownBlockView({
-  block,
-  eagerImages = false,
-  onImageLoad,
-}: {
-  block: MarkdownBlock
-  eagerImages?: boolean
-  onImageLoad?: () => void
-}) {
-  if (block.type === 'pageBreak') return <span className="folio-page-break" aria-hidden="true" />
+export function MarkdownBlockView({ block }: { block: MarkdownBlock }) {
   if (block.type === 'paragraph') return <p>{renderInline(block.content)}</p>
   if (block.type === 'blockquote') return <blockquote><p>{renderInline(block.content)}</p></blockquote>
   if (block.type === 'image') {
     return (
       <figure>
-        <img src={block.src} alt={block.alt} loading={eagerImages ? 'eager' : 'lazy'} onLoad={onImageLoad} />
+        <img src={block.src} alt={block.alt} />
         {(block.caption || block.alt) && <figcaption>{block.caption || block.alt}</figcaption>}
       </figure>
     )
@@ -53,26 +44,4 @@ export function MarkdownBlockView({
   }
   const Heading = `h${block.level}` as 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   return <Heading>{renderInline(block.content)}</Heading>
-}
-
-export default function LightMarkdownPage({ page, side }: { page?: MarkdownBookPage; side: 'left' | 'right' }) {
-  if (!page || page.kind === 'blank') return <div className={`folio-leaf folio-leaf-${side} is-blank`} aria-hidden="true" />
-
-  if (page.kind === 'chapter') {
-    return (
-      <section className={`folio-leaf folio-leaf-${side} folio-chapter-page`}>
-        <span>Chapter</span>
-        <h2>{page.chapter}</h2>
-        <i />
-      </section>
-    )
-  }
-
-  return (
-    <section className={`folio-leaf folio-leaf-${side} folio-content-page`}>
-      <div className="folio-markdown-flow">
-        {page.blocks.map((block, index) => <MarkdownBlockView key={`${block.type}-${index}`} block={block} />)}
-      </div>
-    </section>
-  )
 }
