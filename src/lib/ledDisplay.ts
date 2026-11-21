@@ -25,11 +25,6 @@ const palette: RGB[] = [...cga, ...grays.map(v => [v, v, v]), ...rings, ...Array
   .map(([r, g, b]) => [Math.round(r * 255 / 63), Math.round(g * 255 / 63), Math.round(b * 255 / 63)])
 const hex = (values: number[]) => '#' + values.map(v => v.toString(16).padStart(2, '0')).join('')
 export const vgaColors = palette.map(hex)
-export const vgaTrack = 'linear-gradient(90deg, ' + vgaColors.map((color, index) =>
-  color + ' ' + (100 * index / 256) + '% ' + (100 * (index + 1) / 256) + '%',
-).join(', ') + ')'
-
-export type LedSettings = { color: number; glow: number; aging: boolean }
 
 const bayer = [0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5]
 

@@ -1,10 +1,10 @@
 import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type KeyboardEvent } from 'react'
 import { useGSAP } from '@gsap/react'
-import { ArrowCounterClockwise, ArrowRight, EnvelopeSimple, Gear, NoteBlank } from '@phosphor-icons/react'
+import { ArrowCounterClockwise, ArrowRight, EnvelopeSimple, NoteBlank } from '@phosphor-icons/react'
 import { gsap } from 'gsap'
 import { useLanguageContext } from './i18n/LanguageContext'
+import LedWear from './components/LedWear'
 import PortfolioContent, { LedImage, PortfolioIntro, sections, type PortfolioSection } from './components/PortfolioContent'
-import { vgaColors, vgaTrack, type LedSettings } from './lib/ledDisplay'
 
 gsap.registerPlugin(useGSAP)
 
@@ -17,11 +17,9 @@ const pages = {
   contact: { en: 'Contact', zh: '联系', title: 'Contact', icon: EnvelopeSimple },
 }
 
-const defaultSettings: LedSettings = { color: 76, glow: 68, aging: true }
-const settingsKey = 'soul-portfolio.display'
 const controlCopy = {
-  zh: { navigation: '主页栏目', language: '切换到英文', settings: '显示设置', color: 'VGA 主色', glow: '光晕', aging: '闪烁和坏点', next: '下一页', home: '回到首页' },
-  en: { navigation: 'Portfolio sections', language: 'Switch to Chinese', settings: 'Display settings', color: 'VGA color', glow: 'Glow', aging: 'Flicker and bad pixels', next: 'Next page', home: 'Back to home' },
+  zh: { navigation: '主页栏目', language: '切换到英文', next: '下一页', home: '回到首页' },
+  en: { navigation: 'Portfolio sections', language: 'Switch to Chinese', next: 'Next page', home: 'Back to home' },
 }
 
 function pageFromUrl() {
@@ -64,28 +62,14 @@ function contentPageCount(content: HTMLElement) {
   return count
 }
 
-function readSettings(): LedSettings {
-  try {
-    const saved = JSON.parse(localStorage.getItem(settingsKey) ?? '{}')
-    return {
-      color: Number.isInteger(saved.color) && saved.color >= 0 && saved.color <= 255 ? saved.color : defaultSettings.color,
-      glow: Number.isInteger(saved.glow) && saved.glow >= 0 && saved.glow <= 100 ? saved.glow : defaultSettings.glow,
-      aging: typeof saved.aging === 'boolean' ? saved.aging : defaultSettings.aging,
-    }
-  } catch {
-    return defaultSettings
-  }
-}
-
 export default function SoulPortfolio() {
   const { language, setLanguage } = useLanguageContext()
   const [address, setAddress] = useState(pageFromUrl)
   const [pageCount, setPageCount] = useState(1)
   const [recordIndex, setRecord] = useState(0)
-  const [display, setDisplay] = useState(readSettings)
+  const emission = useRef<HTMLDivElement>(null)
   const panel = useRef<HTMLElement>(null)
   const flow = useRef<HTMLDivElement>(null)
-  const settings = useRef<HTMLDetailsElement>(null)
   const { section } = address
   const pageIndex = Math.min(address.index, pageCount - 1)
   const nextSection = sections[sections.indexOf(section) + 1]
@@ -98,7 +82,6 @@ export default function SoulPortfolio() {
   const intro = section === 'intro'
   const paired = section === 'experience' || section === 'research'
   const title = intro ? zh ? '唐致烨' : 'Zhiye Tang' : zh ? page.zh : page.title
-  const activeColor = vgaColors[display.color]
 
   useLayoutEffect(() => {
     const viewport = panel.current
@@ -145,17 +128,8 @@ export default function SoulPortfolio() {
     document.title = (zh ? '唐致烨' : 'Zhiye Tang') + ' · ' + page[language]
   }, [language, page, zh])
 
-  useEffect(() => {
-    try {
-      localStorage.setItem(settingsKey, JSON.stringify(display))
-    } catch {
-      // Display settings still apply when storage is unavailable.
-    }
-  }, [display])
-
   function navigate(next: PortfolioSection, nextIndex = 0) {
     if (section === next && address.index === nextIndex) return
-    if (settings.current) settings.current.open = false
     history.pushState(null, '', '#' + next + (nextIndex ? '/' + (nextIndex + 1) : ''))
     setAddress({ section: next, index: nextIndex })
   }
@@ -176,12 +150,8 @@ export default function SoulPortfolio() {
     document.getElementById('portfolio-tab-' + next)?.focus()
   }
 
-  return <div className="portfolio-screen" style={{
-    '--screen-color': activeColor,
-    '--glow-radius': (display.glow / 100 * 7) + 'px',
-    '--glow-opacity': (display.glow * .43) + '%',
-  } as CSSProperties}>
-    <div className="portfolio-emission">
+  return <div className="portfolio-screen">
+    <div ref={emission} className="portfolio-emission">
       <div className="portfolio-frame">
         <header className="portfolio-header">
           <nav className="portfolio-tabs" role="tablist" aria-label={labels.navigation} onKeyDown={onTabKey}>
@@ -238,32 +208,6 @@ export default function SoulPortfolio() {
         </main>
       </div>
       <footer className="portfolio-footer">
-        <details ref={settings} className="portfolio-settings">
-          <summary aria-label={labels.settings} title={labels.settings}><Gear size={21} aria-hidden="true" /></summary>
-          <div className="portfolio-controls" role="group" aria-label={labels.settings}>
-            <label className="portfolio-slider">
-              <span>{labels.color}<span className="portfolio-control-value" aria-hidden="true">
-                <i style={{ backgroundColor: activeColor }} />{String(display.color).padStart(3, '0')}
-              </span></span>
-              <input type="range" min="0" max="255" value={display.color}
-                aria-valuetext={display.color + (zh ? ' 号 ' : ', ') + activeColor}
-                style={{ '--slider-track': vgaTrack } as CSSProperties}
-                onChange={event => setDisplay({ ...display, color: event.currentTarget.valueAsNumber })}
-              />
-            </label>
-            <label className="portfolio-slider">
-              <span>{labels.glow}<span className="portfolio-control-value" aria-hidden="true">{display.glow}%</span></span>
-              <input type="range" min="0" max="100" value={display.glow} aria-valuetext={display.glow + '%'}
-                onChange={event => setDisplay({ ...display, glow: event.currentTarget.valueAsNumber })}
-              />
-            </label>
-            <label className="portfolio-aging">
-              <input type="checkbox" checked={display.aging}
-                onChange={event => setDisplay({ ...display, aging: event.currentTarget.checked })} />
-              {labels.aging}
-            </label>
-          </div>
-        </details>
         <output className="portfolio-page-number">{pageCount > 1 ? (pageIndex + 1) + ' / ' + pageCount : ''}</output>
         <button className="portfolio-turn" type="button" aria-label={turnLabel} title={turnLabel}
           onClick={() => hasMore ? navigate(section, pageIndex + 1) : navigate(nextSection ?? 'intro')}>
@@ -272,7 +216,7 @@ export default function SoulPortfolio() {
             : <ArrowCounterClockwise size={26} weight="bold" aria-hidden="true" />}
         </button>
       </footer>
-      {display.aging && <div className="portfolio-wear" aria-hidden="true"><i /><i /><i /><i /><i /></div>}
+      <LedWear emission={emission} />
     </div>
   </div>
 }
