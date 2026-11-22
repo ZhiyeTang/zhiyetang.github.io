@@ -1,8 +1,10 @@
 import { useEffect, useRef, type RefObject } from 'react'
 
 const pulseFilter = 'portfolio-led-pulse'
+const dropout = { gain: [.06, .08, .12], duration: 82 }
+const surge = { gain: [3.4, .38, 2.8], duration: 112 }
 
-function pickSpot(board: HTMLElement) {
+function pickSpot(board: HTMLElement, opening: boolean) {
   const pitch = parseFloat(getComputedStyle(board).getPropertyValue('--led-pitch'))
   const screen = board.getBoundingClientRect()
   const panel = board.querySelector('.portfolio-panel')
@@ -10,28 +12,33 @@ function pickSpot(board: HTMLElement) {
   const range = new Range()
   const areas = []
 
-  for (const element of board.querySelectorAll('h1, h2, h3, canvas:not([hidden]), .portfolio-tab[aria-selected="true"]')) {
+  for (const element of board.querySelectorAll('h1, h2, h3, .portfolio-tab[aria-selected="true"]')) {
     const clip = panel?.contains(element) && panelBounds ? panelBounds : screen
     range.selectNodeContents(element)
-    const rects = element instanceof HTMLCanvasElement ? element.getClientRects() : range.getClientRects()
-    for (const rect of rects) {
+    for (const rect of range.getClientRects()) {
       const left = Math.max(clip.left, rect.left)
       const right = Math.min(clip.right, rect.right)
       const top = Math.max(clip.top, rect.top)
       const bottom = Math.min(clip.bottom, rect.bottom)
-      if (right > left && bottom > top) areas.push({ left, top, width: right - left, height: bottom - top })
+      if (right > left && bottom > top) {
+        areas.push({ left, top, width: right - left, height: bottom - top, headline: element.tagName === 'H1' })
+      }
     }
   }
 
-  const area = areas[Math.floor(Math.random() * areas.length)]
+  const headlines = areas.filter(area => area.headline)
+  const candidates = headlines.length && (opening || Math.random() < .7) ? headlines : areas
+  const area = candidates[Math.floor(Math.random() * candidates.length)]
   if (!area || !pitch) return
-  const x = area.left + Math.random() * area.width - screen.left
-  const y = area.top + (.3 + Math.random() * .45) * area.height - screen.top
+  const width = Math.max(pitch, Math.floor(Math.min(area.width, 56 + Math.random() * 64) / pitch) * pitch)
+  const height = 3 * pitch
+  const x = area.left + Math.random() * Math.max(0, area.width - width) - screen.left
+  const y = area.top + (.35 + Math.random() * .3) * area.height - screen.top - height / 2
   return {
     x: Math.floor(x / pitch) * pitch,
     y: Math.floor(y / pitch) * pitch,
-    width: (Math.random() < .55 ? 2 : 1) * pitch,
-    height: pitch,
+    width,
+    height,
   }
 }
 
@@ -40,37 +47,51 @@ export default function LedWear({ emission }: { emission: RefObject<HTMLDivEleme
 
   useEffect(() => {
     const board = emission.current
-    const bright = pulse.current
-    if (!board || !bright) return
+    const strip = pulse.current
+    if (!board || !strip) return
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const channels = [...strip.children]
     let timer = 0
-
-    const schedule = () => {
-      if (motion.matches || document.hidden) return
-      timer = window.setTimeout(() => {
-        if (motion.matches || document.hidden) return
-        const spot = pickSpot(board)
-        if (!spot) {
-          schedule()
-          return
-        }
-        for (const [name, value] of Object.entries(spot)) bright.setAttribute(name, String(value))
-        board.style.filter = `url(#${pulseFilter})`
-        timer = window.setTimeout(sync, 80 + Math.random() * 70)
-      }, 750 + Math.random() * 2700)
-    }
 
     const clear = () => {
       window.clearTimeout(timer)
       board.style.removeProperty('filter')
     }
 
-    const sync = () => {
-      clear()
-      schedule()
+    const schedule = (opening = false) => {
+      if (motion.matches || document.hidden) return
+      timer = window.setTimeout(() => {
+        if (motion.matches || document.hidden) return
+        const spot = pickSpot(board, opening)
+        if (!spot) {
+          schedule()
+          return
+        }
+        for (const [name, value] of Object.entries(spot)) strip.setAttribute(name, String(value))
+        const phases = opening || Math.random() < .55 ? [dropout, surge, dropout, surge] : [dropout, surge]
+
+        const playPhase = (index: number) => {
+          const phase = phases[index]
+          if (!phase) {
+            clear()
+            schedule()
+            return
+          }
+          phase.gain.forEach((gain, channel) => channels[channel].setAttribute('slope', String(gain)))
+          timer = window.setTimeout(() => playPhase(index + 1), phase.duration)
+        }
+
+        board.style.filter = `url(#${pulseFilter})`
+        playPhase(0)
+      }, opening ? 420 + Math.random() * 330 : 1150 + Math.random() * 2450)
     }
 
-    schedule()
+    const sync = () => {
+      clear()
+      schedule(true)
+    }
+
+    schedule(true)
     motion.addEventListener('change', sync)
     document.addEventListener('visibilitychange', sync)
     return () => {
@@ -84,13 +105,13 @@ export default function LedWear({ emission }: { emission: RefObject<HTMLDivEleme
     <i /><i /><i /><i /><i />
     <svg width="0" height="0">
       <filter id={pulseFilter} filterUnits="userSpaceOnUse" x="0" y="0" width="100%" height="100%" colorInterpolationFilters="sRGB">
-        {/* Boost the existing emission only within the selected cells. */}
-        <feComponentTransfer ref={pulse} in="SourceGraphic" result="boost">
-          <feFuncR type="linear" slope="2.8" />
-          <feFuncG type="linear" slope="2.8" />
-          <feFuncB type="linear" slope="2.8" />
+        {/* Change the existing emission only within the selected strip. */}
+        <feComponentTransfer ref={pulse} in="SourceGraphic" result="strip">
+          <feFuncR type="linear" />
+          <feFuncG type="linear" />
+          <feFuncB type="linear" />
         </feComponentTransfer>
-        <feMerge><feMergeNode in="SourceGraphic" /><feMergeNode in="boost" /></feMerge>
+        <feMerge><feMergeNode in="SourceGraphic" /><feMergeNode in="strip" /></feMerge>
       </filter>
     </svg>
   </div>
